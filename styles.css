@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 4em;
+}
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFF8;
+}
+
+.header {
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.header-navs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.main {
+  max-height: 100vh;
+  background: url('assets/home.jpeg') no-repeat center center;
+  -webkit-background-size: cover;
+  position: relative;
+}
+
+.content-main {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  line-height: 10px;
+  color: white;
+}
+
+.content-main h2 {
+  font-weight: 100;
+  margin-left: 10px;
+}
+
+.how-panels {
+  height: 40vh;
+}
+
+.how-panels li {
+  width: 33.33%;
+}
+
+.how-panels .how-panel-1 {
+  background-color: #63B332;
+}
+
+.how-panels .how-panel-2 {
+  background-color: #7FCCF7;
+}
+
+.how-panels .how-panel-3 {
+  background-color: #FEF216;
+}
+
+.how-details li {
+  width: 33%;
+  text-align: center;
+  padding: 0 25px;
+}
+
+.how-details .how-title {
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+.how-details .how-subtext {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.how-details li img {
+  max-height: 100px;
+}
+
+
+.main img {
+  max-height: 100%;
+}
+
+.testimonials {
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch;
+
+  position: relative;
+  width: 100%;
+}
+
+.book-now {
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px 0;
+}
+
+.button-action {
+  background-color: #006BB6;
+  color: white;
+  border-radius: 10px;
+  width: 45vw;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* headlines with lines */
+.decorated{
+     overflow: hidden;
+     text-align: center;
+     font-size: 2em;
+     padding: 2.5% 0;
+     margin: 0;
+     font-weight: 200;
+ }
+
+.decorated > span{
+    position: relative;
+    display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 1px solid;
+    width: 35vw; /* half of limiter*/
+    margin: 0 20px;
+}
+.decorated > span:before{
+    right: 100%;
+}
+.decorated > span:after{
+    left: 100%;
+}
