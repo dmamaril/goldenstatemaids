@@ -32,8 +32,9 @@ h1 {
   font-size: 1.5em;
   height: 50px;
   line-height: 50px;
-  border-radius: 50px;
+  /*border-radius: 50px;*/
   margin: 0 auto;
+  cursor: pointer;
 }
 
 
@@ -148,14 +149,11 @@ h1 {
   margin: 0 auto;
   text-align: center;
   padding: 25px 0;
-}
-
-.button-action {
   background-color: #006BB6;
   color: white;
-  border-radius: 10px;
   width: 45vw;
-  height: 50px;
+  /*border-radius: 45vw;*/
+  cursor: pointer;
   font-size: 1.5em;
   font-weight: 700;
 }
@@ -168,14 +166,16 @@ h1 {
 
 .trust-item-header {
   font-size: 1.5em;
+  height: 60%;
 }
 
 .trust-item-text {
   font-size: 16px;
+  height: 40%;
 }
 
 .trust ul {
-  margin: 30px auto;
+  margin: 20px auto;
   width: 90%;
 }
 
