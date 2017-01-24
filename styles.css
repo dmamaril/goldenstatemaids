@@ -25,17 +25,28 @@ h1 {
   background-color: #FFFFF8;
 }
 
+
+.learn-more {
+  border: 1px solid white;
+  width: 200px;
+  font-size: 1.5em;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+
 .header {
     width: 50%;
     height: 100px;
     margin: 0 auto;
 
-    list-style: none;
-    display: flex;
+/*    display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: center;*/
 }
 
 .header li:first-child {
@@ -49,6 +60,7 @@ h1 {
   text-align: center;
   height: 35px;
   line-height: 35px;
+  cursor: pointer;
 }
 
 #logo {
@@ -109,6 +121,14 @@ h1 {
 }
 
 
+.container-header {
+  padding: 2.5% 0;
+  margin: 0;
+  font-weight: 200;
+  font-size: 2em;
+  text-align: center;
+}
+
 .testimonials {
   display: flex;
   align-items: center;
@@ -119,12 +139,9 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   align-content: stretch;
-
-  position: relative;
-  width: 100%;
 }
 
 .book-now {
@@ -143,31 +160,58 @@ h1 {
   font-weight: 700;
 }
 
+.trust {
+  background-color: #262626;
+  color: white;
+  text-align: center;
+}
+
+.trust-item-header {
+  font-size: 1.5em;
+}
+
+.trust-item-text {
+  font-size: 16px;
+}
+
+.trust ul {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.trust li {
+  width: 30%;
+  height: 33vh;
+}
+
+
+.trust h2 {
+  width: 45%;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
 /* headlines with lines */
 .decorated{
-     overflow: hidden;
-     text-align: center;
-     font-size: 2em;
-     padding: 2.5% 0;
-     margin: 0;
-     font-weight: 200;
+   overflow: hidden;
+   text-align: center;
  }
 
 .decorated > span{
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .decorated > span:before, .decorated > span:after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    border-bottom: 1px solid;
-    width: 35vw; /* half of limiter*/
-    margin: 0 20px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-bottom: 1px solid;
+  width: 35vw; /* half of limiter*/
+  margin: 0 20px;
 }
 .decorated > span:before{
-    right: 100%;
+  right: 100%;
 }
 .decorated > span:after{
-    left: 100%;
+  left: 100%;
 }
