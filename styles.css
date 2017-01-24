@@ -23,10 +23,11 @@ h1 {
   width: 100%;
   height: 100vh;
   background-color: #FFFFF8;
+  position: relative;
 }
 
 
-.learn-more {
+.action-medium {
   border: 1px solid white;
   width: 200px;
   font-size: 1.5em;
@@ -130,11 +131,6 @@ h1 {
   text-align: center;
 }
 
-.testimonials {
-  display: flex;
-  align-items: center;
-  align-content: stretch;
-}
 
 .flex-row {
   display: flex;
@@ -145,7 +141,7 @@ h1 {
   align-content: stretch;
 }
 
-.book-now {
+.action-large {
   margin: 0 auto;
   text-align: center;
   padding: 25px 0;
@@ -189,6 +185,67 @@ h1 {
   width: 45%;
   margin: 0 auto;
   font-weight: 700;
+}
+
+.social-parallax {
+  /* The image used */
+  background-image: url('assets/flowers.png');
+
+  /* Set a specific height */
+  min-height: 70vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.review-layer {
+  background-color: black;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 70vh;
+}
+
+.reviews {
+  position: absolute;
+  top: 0;
+  width: 80vw;
+  left: 10vw;
+  color: white;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.reviews > div, .reviews > h1 {
+  margin: 5vh auto;
+}
+
+.reviews > h1 {
+  font-size: 3em;
+}
+
+.reviews li {
+  height: 35vh;
+  width: 25vw;
+  background-color: white;
+}
+
+.book-banner {
+  height: 30vh;
+  background-color: white;
+  text-align: center;
+}
+
+.book-banner h1 {
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 2em;
+  padding: 5vh 0;
 }
 
 /* headlines with lines */
