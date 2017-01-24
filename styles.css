@@ -62,11 +62,12 @@ h1 {
 }
 
 .how-panels {
-  height: 40vh;
+
 }
 
 .how-panels li {
   width: 33.33%;
+  text-align: center;
 }
 
 .panel-img {
@@ -74,22 +75,9 @@ h1 {
   height: 33vh;
 }
 
-/*.how-panels li img {
-  background-color: #63B332;
-}
-
-.how-panels .how-panel-2 {
-  background-color: #7FCCF7;
-}
-
-.how-panels .how-panel-3 {
-  background-color: #FEF216;
-}*/
-
-.how-details li {
-  width: 33%;
-  text-align: center;
-  padding: 0 25px;
+.how-details {
+  padding: 25px;
+  height: 33vh;
 }
 
 .how-details .how-title {
@@ -102,7 +90,7 @@ h1 {
   padding: 10px;
 }
 
-.how-details li img {
+.how-details img {
   max-height: 100px;
 }
 
