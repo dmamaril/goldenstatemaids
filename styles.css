@@ -29,8 +29,7 @@ h1 {
 
 
 .header {
-    width: 60%;
-    height: 100px;
+    min-width: 80%;
     margin: 0 auto;
     padding-top: 25px;
 
@@ -64,6 +63,7 @@ h1 {
   position: relative;
   bottom: 100px;
   float: left;
+  margin-left: 10%;
 }
 
 .main {
@@ -74,11 +74,12 @@ h1 {
 }
 
 .content-main {
-  position: absolute;
-  top: 25%;
-  left: 25%;
   line-height: 10px;
   color: white;
+  float: left;
+  position: absolute;
+  top: 200px;
+  left: 20%;
 }
 
 .content-main h2 {
