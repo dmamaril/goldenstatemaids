@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 4em;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  flex-flow: row wrap;
+  width: 90vw;
+  margin: auto;
+}
+
+.flex-container li {
+  width: 33%;
+}
+
+.action-button {
+  margin: 0 auto;
+  position: relative;
+}
+
+.action-large {
+  text-align: center;
+  padding: 25px 0;
+  background-color: #006BB6;
+  color: white;
+  width: 45vw;
+  /*border-radius: 45vw;*/
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.action-medium {
+  border: 1px solid white;
+  width: 200px;
+  font-size: 1.5em;
+  height: 50px;
+  line-height: 50px;
+  /*border-radius: 50px;*/
+  cursor: pointer;
+}
+
+.book-banner {
+  height: 30vh;
+  background-color: white;
+  text-align: center;
+}
+
+.book-banner h1 {
+  width: 80%;
+  margin: 5vh auto;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+
+/* headlines with lines */
+.decorated{
+   overflow: hidden;
+   text-align: center;
+ }
+
+.decorated > span{
+  position: relative;
+  display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-bottom: 1px solid;
+  width: 35vw; /* half of limiter*/
+  margin: 0 20px;
+}
+.decorated > span:before{
+  right: 100%;
+}
+.decorated > span:after{
+  left: 100%;
+}
+
+@media (max-width: 770px) {
+  .flex-container li {
+    width: 100%;
+  }
+
+  .action-button {
+    bottom: 50px;
+  }
+
+  .book-banner h1 {
+    margin: 10vh auto;
+  }
+}

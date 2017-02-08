@@ -1,0 +1,49 @@
+.trust {
+  background-color: #262626;
+  color: white;
+  text-align: center;
+}
+
+.trust-item-header {
+  font-size: 1.5em;
+  height: 60%;
+}
+
+.trust-item-text {
+  font-size: 16px;
+  height: 40%;
+}
+
+.trust ul {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.trust li {
+  width: 30%;
+  height: 33vh;
+}
+
+
+.trust h2 {
+  width: 45%;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+
+@media (max-width: 770px) {
+
+  .trust h2 {
+    font-size: 3em;
+    width: 90vw;
+  }
+
+  .trust-item-header {
+    font-size: 2.5em;
+  }
+
+  .trust-item-text {
+    font-size: 2em;
+  }
+}
