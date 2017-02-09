@@ -39,6 +39,10 @@
     width: 90vw;
   }
 
+  .trust li {
+    height: auto;
+  }
+
   .trust-item-header {
     font-size: 2em;
   }
@@ -52,10 +56,6 @@
 
   .trust h2 {
     font-size: 2em; 
-  }
-
-  .trust li {
-    height: auto;
   }
 
   .trust-item-header {
