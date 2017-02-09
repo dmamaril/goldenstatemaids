@@ -122,4 +122,8 @@ h1 {
     font-size: 1em;
     padding: 1em;
   }
+
+  .flex-container li {
+    margin-bottom: 10vh;
+  }
 }
