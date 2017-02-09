@@ -15,15 +15,16 @@
 .how-details {
   padding: 25px;
   height: 33vh;
+  margin-bottom: 25px;
 }
 
 .how-details .how-title {
-  font-size: 24px;
+  font-size: 2em;
   padding: 10px 0;
 }
 
 .how-details .how-subtext {
-  font-size: 16px;
+  font-size: 1em;
   padding: 10px;
 }
 

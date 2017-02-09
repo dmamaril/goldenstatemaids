@@ -6,7 +6,7 @@
 
 .trust-item-header {
   font-size: 1.5em;
-  height: 60%;
+  height: 5em;
 }
 
 .trust-item-text {
@@ -40,10 +40,26 @@
   }
 
   .trust-item-header {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 
   .trust-item-text {
-    font-size: 2em;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 410px) {
+
+  .trust h2 {
+    font-size: 2em; 
+  }
+
+  .trust li {
+    height: auto;
+    margin-bottom: 10vh;
+  }
+
+  .trust-item-header {
+    height: auto;
   }
 }
