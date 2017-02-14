@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "prod": "webpack -p",
-    "webpack": "./node_modules/.bin/webpack"
+    "webpack": "./node_modules/.bin/webpack",
+    "publish": "npm run webpack && git add . && git commit -m '[update] ghpages' && git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
