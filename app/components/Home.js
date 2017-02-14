@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/home';
 import How from './How';
 import Trust from './Trust';
+import Review from './Review';
 
 class Home extends React.Component {
     render () {
@@ -15,6 +16,16 @@ class Home extends React.Component {
                 <How />
 
                 <Trust />
+
+                <Review />
+
+                <div className="jumbotron text-center" style={ styles.jumbotron }>
+                    <h2 className="black-header"> BOOK A HOUSE CLEANING IN 60 SECONDS </h2>
+
+                    <button className="btn btn-lg btn-danger">
+                        BOOK APPOINTMENT
+                    </button>
+                </div>
             </div>
         );
     }

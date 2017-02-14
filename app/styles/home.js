@@ -1,4 +1,4 @@
-import bg_url from '../assets/home_md.jpg';
+import bg_url from '../assets/home.jpg';
 
 
 export default {
@@ -10,6 +10,7 @@ export default {
     },
 
     jumbotron: {
-        
+        backgroundColor: 'white',
+        marginBottom: '0'
     }
 }
