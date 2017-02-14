@@ -5,6 +5,7 @@ export default {
     navbar: {
         margin: '0',
         padding: '0 10%',
-        backgroundColor: 'black'
+        backgroundColor: 'transparent',
+        borderColor: 'transparent'
     }
 };

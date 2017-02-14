@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link } from 'react-router';
 import styles   from '../styles/header';
 import logo_sm  from '../assets/logo/logo-03.png';
-import logo_lg  from '../assets/logo/logo-02.png';
+import logo_lg  from '../assets/logo/logo-01.png';
 
 
 /**
@@ -53,17 +53,25 @@ class HeaderContainer extends React.Component {
     render () {
 
         return (
-            <nav className="navbar" style={ styles.navbar }>
+            <nav className="navbar navbar-default" style={ styles.navbar }>
                 <div className="container-fluid">
                     <div className="navbar-header">
+
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span className="sr-only">Toggle navigation</span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+
                         <a className="navbar-brand" href="#">
                             <img alt="Golden State Maids" style={ styles.logo } src={ this.state.logo }/>
                         </a>
                     </div>
 
-                    <div className="collapse navbar-collapse pull-right">
+                    <div className="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Login<span className="sr-only">(current)</span></a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Book Now</a></li>
                         </ul>
