@@ -18,12 +18,11 @@ class How extends React.Component {
 
     createStep ({ header, img, icon, text }, index) {
         return (
-            <div className="col-md-4 col-sm-12" key={ index } >
+            <div className="col-md-4 col-sm-12 push-down" key={ index }>
                 <img className="img-responsive" src={ img } />
                 <img className="img-responsive" src={ icon } style={ styles.howIcon }/>
                 <h3> { header } </h3>
                 <p> { text } </p>
-                <hr/>
             </div>
         )
     }
@@ -31,10 +30,14 @@ class How extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center">
-                <h1 style={ styles.howHeader }> HOW GOLDEN STATE MAIDS WORKS </h1>
+                <h1 className="black-header"> HOW GOLDEN STATE MAIDS WORKS </h1>
                 <div className="row">
                     { this.props.steps.map(this.createStep) }
                 </div>
+
+                <button type="submit" className="btn btn-lg btn-primary push-down">
+                    BOOK APPOINTMENT
+                </button>
             </div> 
         );
     }

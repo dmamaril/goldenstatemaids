@@ -7,6 +7,32 @@ h1, h2 {
     color: white !important;
 }
 
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
 .img-responsive {
     margin: 0 auto;
+}
+
+.push-down {
+    margin-bottom: 50px;
+}
+
+.push-top-down {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.black-header {
+    color: black !important;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.white-header {
+    color: white !important;
+    margin-bottom: 50px;
+    font-weight: 400;
 }

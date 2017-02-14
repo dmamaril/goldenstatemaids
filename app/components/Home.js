@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/home';
 import How from './How';
+import Trust from './Trust';
 
 class Home extends React.Component {
     render () {
@@ -11,7 +12,9 @@ class Home extends React.Component {
                     <h2> Maid Service Maid Easy </h2>
                 </div>
 
-                <How/>
+                <How />
+
+                <Trust />
             </div>
         );
     }
