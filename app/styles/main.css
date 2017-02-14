@@ -1,0 +1,12 @@
+body {
+    font-family: 'Raleway';
+}
+
+h1, h2 {
+    font-weight: 100;
+    color: white !important;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
