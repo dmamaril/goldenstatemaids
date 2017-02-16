@@ -1,7 +1,8 @@
-import React from 'react';
-import CreditCardInfo from './CreditCardInfo';
-import DateTimePicker from './DateTimePicker';
+import React            from 'react';
+import CreditCardInfo   from './CreditCardInfo';
+import DateTimePicker   from './DateTimePicker';
 import Frequency        from './Frequency';
+import Extras           from './Extras';
 
 export default ({ onSubmit, onChange }) => {
 
@@ -100,9 +101,11 @@ export default ({ onSubmit, onChange }) => {
                 </div>
             </div>
 
+            <Extras onChange={ onChange } />
+
             <DateTimePicker onChange={ onChange } />
 
-            {/*<CreditCardInfo onChange={ onChange }/>*/}
+            <CreditCardInfo onChange={ onChange }/>
 
             <Frequency onChange={ onChange } />
 
