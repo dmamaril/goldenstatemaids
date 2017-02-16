@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'IcoMoon---Ultimate';
-  src:  url('fonts/IcoMoon---Ultimate.eot?pfd5in');
-  src:  url('fonts/IcoMoon---Ultimate.eot?pfd5in#iefix') format('embedded-opentype'),
-    url('fonts/IcoMoon---Ultimate.ttf?pfd5in') format('truetype'),
-    url('fonts/IcoMoon---Ultimate.woff?pfd5in') format('woff'),
-    url('fonts/IcoMoon---Ultimate.svg?pfd5in#IcoMoon---Ultimate') format('svg');
+  src:  url('fonts/IcoMoon---Ultimate.eot?1ftmtl');
+  src:  url('fonts/IcoMoon---Ultimate.eot?1ftmtl#iefix') format('embedded-opentype'),
+    url('fonts/IcoMoon---Ultimate.ttf?1ftmtl') format('truetype'),
+    url('fonts/IcoMoon---Ultimate.woff?1ftmtl') format('woff'),
+    url('fonts/IcoMoon---Ultimate.svg?1ftmtl#IcoMoon---Ultimate') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,8 +18,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  color: white;
-  font-size: 2em;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -38,10 +36,22 @@
 .icon-history:before {
   content: "\e100";
 }
+.icon-clock:before {
+  content: "\e107";
+}
+.icon-calendar:before {
+  content: "\e112";
+}
 .icon-bubbles:before {
   content: "\e154";
 }
 .icon-shield:before {
   content: "\e27e";
+}
+.icon-stack-cancel:before {
+  content: "\e347";
+}
+.icon-facebook:before {
+  content: "\e49b";
 }
 

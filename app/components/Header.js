@@ -64,16 +64,16 @@ class HeaderContainer extends React.Component {
                             <span className="icon-bar"></span>
                         </button>
 
-                        <a className="navbar-brand" href="#">
+                        <Link className="navbar-brand" to="/">
                             <img alt="Golden State Maids" style={ styles.logo } src={ this.state.logo }/>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li><a href="#">Login<span className="sr-only">(current)</span></a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Book Now</a></li>
+                            <li><Link to="/login">Login<span className="sr-only">(current)</span></Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/book">Book Now</Link></li>
                         </ul>
                     </div>
                 </div>

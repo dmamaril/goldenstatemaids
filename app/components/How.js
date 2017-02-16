@@ -35,9 +35,9 @@ class How extends React.Component {
                     { this.props.steps.map(this.createStep) }
                 </div>
 
-                <button type="submit" className="btn btn-lg btn-primary push-down">
+                <a href="/book" className="btn btn-lg btn-primary push-down">
                     BOOK APPOINTMENT
-                </button>
+                </a>
             </div> 
         );
     }
