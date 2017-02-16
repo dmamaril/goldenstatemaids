@@ -2,7 +2,7 @@ import React from 'react';
 import Payment from 'payment';
 import { findDOMNode } from 'react-dom';
 
-class CardPayment extends React.Component {
+class CreditCardInfo extends React.Component {
 
     constructor (props) {
 
@@ -65,18 +65,17 @@ class CardPayment extends React.Component {
 
                 <div className="col-md-12 col-sm-12"> 
                     <label> Card Number </label>
-                    <input onChange={ this.validateCardNumber } required className="form-control" ref="number" name="number" type="text" placeholder="Card Number"/>
-                    {/*<span className="input-group-addon"><i className="fa fa-credit-card"></i></span>*/}
+                    <input onChange={ this.validateCardNumber } required className="form-control" ref="number" name="stripe.number" type="text" placeholder="Card Number" minLength="19"/>
                 </div>
                 
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-8 col-sm-12">
                     <label> Expiration Date </label>
-                    <input onChange={ this.validateCardExpiry } required className="form-control" ref="expiry" name="expiry" type="text" placeholder="MM/YY"/>
+                    <input onChange={ this.validateCardExpiry } required className="form-control" ref="expiry" name="stripe.expiry" type="text" placeholder="MM/YY"/>
                 </div>
 
                 <div className="col-md-4 col-sm-12">
                     <label> CVC </label>
-                    <input onChange={ this.validateCardCVC } required className="form-control" ref="cvc" name="cvc" type="text" placeholder="CVC" minLength="3" maxLength="4"/>
+                    <input onChange={ this.validateCardCVC } required className="form-control" ref="cvc" name="stripe.cvc" type="text" placeholder="CVC" minLength="3" maxLength="4"/>
                 </div>
             </div>
         );
@@ -84,4 +83,4 @@ class CardPayment extends React.Component {
 };
 
 
-export default CardPayment;
+export default CreditCardInfo;

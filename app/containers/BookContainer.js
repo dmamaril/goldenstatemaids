@@ -11,6 +11,7 @@ class BookContainer extends React.Component {
 
         super(props);
 
+        this.state = {};
         // bind methods
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,11 +21,11 @@ class BookContainer extends React.Component {
 
         e.preventDefault();
 
+        return console.log(this.state);
+
         try {
 
-            let booking = await setBooking(this.state);
-
-            debugger;
+            let booking = await setBooking(this.state.booking);
 
         } catch (err) {
 
@@ -37,9 +38,20 @@ class BookContainer extends React.Component {
 
         let { name, value } = target;
 
-        console.log('updated', name, value);
-        this.setState({ [name]: value });
-    }   
+        console.log('changing', name, value);
+
+        name.indexOf('stripe') === -1
+            ? this.updateState('booking', name, value)
+            : this.updateState('stripe', name.split('.')[1], value);
+    }
+
+    updateState (namespace, key, value) {
+
+        let state   = this.state[namespace] || {};
+        state[key]  = value;
+
+        this.setState({ [namespace]: state });
+    }
 
     render () {
         return (
