@@ -18,7 +18,7 @@ h1, h2 {
     background-color: white;
 }
 
-.form-group input {
+.form-group input, select {
     margin: 10px auto;
 }
 
