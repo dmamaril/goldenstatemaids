@@ -1,5 +1,6 @@
 import React                from 'react';
 import { findDOMNode }      from 'react-dom';
+import styles               from '../styles/datepicker.js';
 import { getAvailability }  from '../utils/firebaseHelpers.js';
 
 const DATEPICKER_CFGS = {
@@ -79,8 +80,6 @@ class DateTimePicker extends React.Component {
         // pull data from fb db;
         let timeslots = await this.getTimeSlots(value);
 
-        debugger;
-
         this.props.onChange(e);
         this.setState({ timeslots });
     }
@@ -108,12 +107,12 @@ class DateTimePicker extends React.Component {
                 </div>
 
                 <div className={ "col-md-12 text-center " + (this.state.is_full ? 'visible' : 'hidden') }>
-                    <h5>
+                    <h4 style={ styles.fontHeavy }>
                         Due to high demand, there are no available times for { this.state.selection }.
-                    </h5>
-                    <h5>
+                    </h4>
+                    <h4 style={ styles.fontHeavy }>
                         Please choose a different date.
-                    </h5>
+                    </h4>
                 </div>
             </div>
         );
