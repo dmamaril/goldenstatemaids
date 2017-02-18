@@ -45,7 +45,10 @@ export async function getTeams () {
             resolve(teams);
         });
     });
-}
+};
+
+// always initialize;
+getTeams();
 
 /**
  * [getAvailability description]
@@ -76,9 +79,9 @@ export async function getAvailability (date) {
 
         let min_display     = (min ? min : '00');
         let hr_display      = (hr <= 12 ? hr : hr - 12);
-        let display_name    = [hr_display, min_display].join(':');
+        let display_text    = [hr_display, min_display].join(':');
 
-        display_name += (hr < 12 ? ' AM' : ' PM');
+        display_text += (hr < 12 ? ' AM' : ' PM');
 
         if (hr !== 8) {
 
@@ -86,12 +89,12 @@ export async function getAvailability (date) {
             let end_hr_display  = (end_hr <= 12 ? end_hr : end_hr - 12);
             let end_time        = [end_hr_display, min_display].join(':');
 
-            display_name += ' - ' + end_time;
-            display_name += (end_hr < 12 ? ' AM' : ' PM');
+            display_text += ' - ' + end_time;
+            display_text += (end_hr < 12 ? ' AM' : ' PM');
         }
 
 
-        return ({ start_time, display_name });
+        return ({ start_time, display_text });
     };
 
     /**
@@ -124,7 +127,7 @@ export async function getAvailability (date) {
             let n_bookings          = current_bookings.length;
 
             // if all teams are booked
-            if (n_bookings === teams.length) {
+            if (n_bookings >= teams.length) {
                 continue;
             }
 
@@ -132,7 +135,7 @@ export async function getAvailability (date) {
             results.push(createAvailability(start_time));
         }
 
-        return results;
+        return results.length ? results : [{ display_text: 'Fully Booked' }];
     };
 
     return new Promise((resolve) => {

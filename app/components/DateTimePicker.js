@@ -1,12 +1,14 @@
-import React                from 'react';
-import { findDOMNode }      from 'react-dom';
-import styles               from '../styles/datepicker.js';
-import { getAvailability }  from '../utils/firebaseHelpers.js';
+import React                            from 'react';
+import { findDOMNode }                  from 'react-dom';
+import styles                           from '../styles/datepicker.js';
+import { getTeams,  getAvailability }   from '../utils/firebaseHelpers.js';
 
 const DATEPICKER_CFGS = {
-    autoclose   : true,
-    minDate     : new Date(),
-    format      : 'mm-dd-yyyy'
+    format          : 'mm-dd-yyyy',
+    autoclose       : true,
+    minDate         : 1,
+    endDate         : '+3m',
+    startDate       : '0d'
 };
 
 class DateTimePicker extends React.Component {
@@ -26,17 +28,15 @@ class DateTimePicker extends React.Component {
 
         let { calendar } = this.refs;
 
-        calendar = $(calendar).datepicker(DATEPICKER_CFGS);
+        calendar        = $(calendar).datepicker(DATEPICKER_CFGS);
 
         calendar.on('clearDate', this.handleChangeDate)
                 .on('changeDate', this.handleChangeDate);
 
-        calendar = calendar.data('datepicker');
 
-        this.clearDates = calendar.clearDates.bind(calendar);
-        this.destroy    = calendar.destroy.bind(calendar);
+        let datepicker  = calendar.data('datepicker');
+        this.destroy    = datepicker.destroy.bind(datepicker);
     }
-
 
     componentWillUnmount() {
         this.destroy();
@@ -48,24 +48,19 @@ class DateTimePicker extends React.Component {
         return getAvailability(date);
     }
 
-
-    clearDates () {
-        this.clearDates();
-    }
-
     createTimeSlot (time={}, index) {
 
-        let { value, display_text } = time;
+        let { start_time, display_text } = time;
 
         if (!display_text) {
-            return (<option value=""> --:-- </option> );
+            return (<option value=""> --:-- </option>);
         }
 
         if (display_text === 'Fully Booked') {
             this.state.is_full = true;
         }
 
-        return (<option value={ value } key={ index }> { display_text } </option>);
+        return (<option value={ start_time } key={ index }> { display_text } </option>);
     }
 
     async handleChangeDate(e) {
@@ -73,8 +68,18 @@ class DateTimePicker extends React.Component {
         let { value } = e.target;
 
         // reset time selections;
-        if (value.length === 0) {
-            return this.setState({ timeslots: [] });
+        if (value.length === 0 || new Date(value).toString() === 'Invalid Date') {
+
+            // update only if we aren't already empty;
+            if (!this.state.timeslots.length) {
+
+                // clear val;
+                e.value = null;
+                this.props.onChange(e);
+                this.setState({ timeslots: [] });
+            }
+
+            return;
         }
 
         // pull data from fb db;
@@ -98,11 +103,7 @@ class DateTimePicker extends React.Component {
 
                 <div className="col-md-6 col-sm-12">
                     <select onChange={ this.props.onChange } required className="form-control">
-                        { 
-                            (!this.state.timeslots.length
-                                ? this.createTimeSlot()
-                                : this.state.timeslots.map(this.createTimeSlot))
-                        }
+                        { (!this.state.timeslots.length ? this.createTimeSlot() : this.state.timeslots.map(this.createTimeSlot)) }
                     </select>
                 </div>
 
