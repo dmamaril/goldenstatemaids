@@ -40,5 +40,7 @@ export default {
     },
 
     booking_form: {
+        width: '60%',
+        margin: '0 auto'
     }
 };
