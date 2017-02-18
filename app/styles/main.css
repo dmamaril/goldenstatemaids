@@ -85,13 +85,6 @@ h1, h2 {
     font-weight: 100;
 }
 
-.booking-frequency .checked {
-    color: white;
-    font-weight: 300;
-    border-color: #0ca9bb;
-    background-color: #0ca9bb;
-}
-
 .booking-option {
     text-align: center;
 }
@@ -108,8 +101,14 @@ h1, h2 {
     position: relative;
 }
 
-.booking-option label .checked, img:hover {
+.booking-option label .checked {
     position: relative;
     top: -65px;
     background-color: #0ca9bb;
+}
+
+.booking-option label:not(.checked) img:hover {
+    position: relative;
+    top: -65px;
+    background-color: #ff684c;
 }

@@ -23,7 +23,7 @@ class Extras extends React.Component {
 
         let opts        = this.state.options;
         let { value }   = e.target;
-        opts[value]     = true;
+        opts[value]     = !opts[value];
 
         this.setState({ options: opts });
 
