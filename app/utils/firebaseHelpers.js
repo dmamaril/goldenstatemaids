@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _        from 'lodash';
 import firebase from 'firebase';
 import cfgs     from '../configs/firebase';
 
@@ -24,7 +24,7 @@ export async function setBooking (booking) {
     return await pushRecord(ref, booking);
 };
 
-let teams = [];
+let teams = { length: 0 };
 
 /**
  * [getTeams description]
@@ -41,7 +41,12 @@ export async function getTeams () {
         }
 
         ref.once('value', (ss) => {
-            ss.forEach((child) => { teams.push(child.key) });
+
+            ss.forEach(({ key }) => { 
+                teams[key] = 1;
+                teams.length++;
+            });
+
             resolve(teams);
         });
     });
@@ -64,7 +69,12 @@ export async function getAvailability (date) {
     const START_TIME    = 830;
     const START_TIMES   = [830, 1030, 1230, 1430, 1630];
 
-    const createAvailability = (start_time) => {
+    /**
+     * [description]
+     * @param  {[type]} start_time [description]
+     * @return {[type]}            [description]
+     */
+    const createAvailability = (start_time, open_teams) => {
 
         start_time = start_time.toString();
 
@@ -94,7 +104,7 @@ export async function getAvailability (date) {
         }
 
 
-        return ({ start_time, display_text });
+        return ({ start_time, display_text, open_teams });
     };
 
     /**
@@ -127,12 +137,20 @@ export async function getAvailability (date) {
             let current_bookings    = bookings[start_time] || [];
             let n_bookings          = current_bookings.length;
 
+            let open_teams          = _.cloneDeep(teams);
+
+            // remove len prop from clone;
+            delete open_teams.length;
+
             // check end time; if it overlaps with any of the existing start_times,
             // push a phantom booking for that timeslot;
             for (let booking of current_bookings) {
 
-                let { end_time }    = booking;
-                let next_start      = START_TIMES[i+1];
+                let { end_time, team_key }  = booking;
+                let next_start              = START_TIMES[i+1];
+
+                // remove booked team from clone;
+                delete open_teams[team_key];
 
                 if (next_start && end_time > next_start) {
                     bookings[next_start] = bookings[next_start] || [];
@@ -145,10 +163,9 @@ export async function getAvailability (date) {
                 continue;
             }
 
-            // opening exists for timeslot;
-            results.push(createAvailability(start_time));
+            open_teams = _.keys(open_teams);
+            results.push(createAvailability(start_time, open_teams));
         }
-
 
         return results.length ? results : [{ display_text: 'Fully Booked' }];
     };
