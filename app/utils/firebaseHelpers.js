@@ -41,7 +41,7 @@ export async function getTeams () {
         }
 
         ref.once('value', (ss) => {
-            ss.forEach((child) => teams.push(child.key));
+            ss.forEach((child) => { teams.push(child.key) });
             resolve(teams);
         });
     });
@@ -118,8 +118,8 @@ export async function getAvailability (date) {
 
         let results = [];
 
-        bookings    = _.values(bookings);
-        bookings    = _.groupBy(bookings, 'start_time');
+        bookings = _.values(bookings);
+        bookings = _.groupBy(bookings, 'start_time');
 
         for (let i = 0 ; i < START_TIMES.length ; i++) {
 
