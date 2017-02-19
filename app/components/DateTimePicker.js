@@ -8,7 +8,7 @@ const DATEPICKER_CFGS = {
     autoclose       : true,
     minDate         : 1,
     endDate         : '+3m',
-    startDate       : '0d'
+    // startDate       : '0d'
 };
 
 class DateTimePicker extends React.Component {
@@ -28,7 +28,7 @@ class DateTimePicker extends React.Component {
 
         let { calendar } = this.refs;
 
-        calendar        = $(calendar).datepicker(DATEPICKER_CFGS);
+        calendar = $(calendar).datepicker(DATEPICKER_CFGS);
 
         calendar.on('clearDate', this.handleChangeDate)
                 .on('changeDate', this.handleChangeDate);

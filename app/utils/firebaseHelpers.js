@@ -121,10 +121,24 @@ export async function getAvailability (date) {
         bookings    = _.values(bookings);
         bookings    = _.groupBy(bookings, 'start_time');
 
-        for (let start_time of START_TIMES) {
+        for (let i = 0 ; i < START_TIMES.length ; i++) {
 
+            let start_time          = START_TIMES[i];
             let current_bookings    = bookings[start_time] || [];
             let n_bookings          = current_bookings.length;
+
+            // check end time; if it overlaps with any of the existing start_times,
+            // push a phantom booking for that timeslot;
+            for (let booking of current_bookings) {
+
+                let { end_time }    = booking;
+                let next_start      = START_TIMES[i+1];
+
+                if (next_start && end_time > next_start) {
+                    bookings[next_start] = bookings[next_start] || [];
+                    bookings[next_start].push({ start_time, end_time });
+                }
+            }
 
             // if all teams are booked
             if (n_bookings >= teams.length) {
@@ -134,6 +148,7 @@ export async function getAvailability (date) {
             // opening exists for timeslot;
             results.push(createAvailability(start_time));
         }
+
 
         return results.length ? results : [{ display_text: 'Fully Booked' }];
     };
