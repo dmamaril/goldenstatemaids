@@ -82,6 +82,8 @@ export default (props) => {
                 freq={ props.freq }
                 mins={ props.mins }
                 total={ props.total }
+                discount={ props.discount }
+                subtotal={ props.subtotal }
                 service_date={ props.service_date }
                 service_time={ props.service_time }/>
         </form>

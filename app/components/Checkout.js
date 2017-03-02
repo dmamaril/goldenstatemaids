@@ -88,6 +88,8 @@ class Checkout extends React.Component {
                 <div className="form-group">
                     <h2> Booking Summary </h2>
 
+                    <hr/>
+
                     <p style={ styles.summary }>
                         <span className="icon-home" style={ styles.icon }></span>
                         { this.getHomeText() }
@@ -107,6 +109,14 @@ class Checkout extends React.Component {
                         <span className="icon-loop" style={ styles.icon }></span>
                         { this.getFreqText() }
                     </p>
+
+                    <hr/>
+
+                    <p> Subtotal: { this.props.subtotal } </p>
+                    <p> Discount: { this.props.discount } </p>
+                    <p> TOTAL: { this.props.total } </p>
+
+                    <hr/>
 
                 </div>
 

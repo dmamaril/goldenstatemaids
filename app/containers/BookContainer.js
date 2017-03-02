@@ -15,7 +15,7 @@ class BookContainer extends React.Component {
         let { query }           = props.location;
         let { bed, bath, freq } = query;
 
-        let booking = { bed: bed || 1, bath: bath || 1, freq: freq || 2, options: {} };
+        let booking = { bed: bed || 1, bath: bath || 1, frequency: freq || 2, options: {} };
         this.state  = { booking };
 
         let totals  = this.updateTotals();
@@ -29,7 +29,7 @@ class BookContainer extends React.Component {
 
     updateTotals () {
 
-        let { bed, bath, freq, options } = this.state.booking;
+        let { bed, bath, frequency, options } = this.state.booking;
 
         let baths   = pricing.bath;
         let freqs   = pricing.freqs;
@@ -67,7 +67,7 @@ class BookContainer extends React.Component {
         }
 
         // apply discount based on recurrence
-        discount = Math.round(subtotal * freqs[freq]);
+        discount = Math.round(subtotal * freqs[frequency]);
 
         // calc diff between subtotal & discount
         total = subtotal - discount;
@@ -111,10 +111,10 @@ class BookContainer extends React.Component {
         this.setState({ [namespace]: state });
 
         // update totals if any options, beds or baths changed;
-        if (key === 'options' || key === 'bed' || key === 'bath') {
+        if (key === 'options' || key === 'bed' || key === 'bath' || key === 'frequency') {
 
-            let { total, mins } = this.updateTotals();
-            this.setState({ total, mins });
+            let { total, mins, discount, subtotal } = this.updateTotals();
+            this.setState({ total, mins, discount, subtotal });
         }
     }
 

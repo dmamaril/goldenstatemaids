@@ -43,6 +43,8 @@ class Book extends React.Component {
                                 bath={ this.props.bath }
                                 freq={ this.props.freq }
                                 total={ this.props.total }
+                                discount={ this.props.discount }
+                                subtotal={ this.props.subtotal }
                                 service_date={ this.props.service_date }
                                 service_time={ this.props.service_time }/>
                         </div>
