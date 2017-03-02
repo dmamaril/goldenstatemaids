@@ -90,7 +90,7 @@ class Checkout extends React.Component {
 
                     <hr/>
 
-                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4" style={ styles.summary }>
+                    <div className="col-sm-offset-3 col-md-offset-4" style={ styles.summary }>
                         <p>
                             <span className="icon-home" style={ styles.icon }></span>
                             { this.getHomeText() }
@@ -114,7 +114,7 @@ class Checkout extends React.Component {
 
                     <hr/>
 
-                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4" style={{ ...styles.summary, ...styles.totals }}>
+                    <div className="col-sm-offset-3 col-md-offset-4" style={{ ...styles.summary, ...styles.totals }}>
                         <p>
                             Subtotal:
                             <span className="pull-right"> { '$' + this.props.subtotal + '.00' } </span>

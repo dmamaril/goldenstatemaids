@@ -7,6 +7,12 @@ h1, h2 {
     color: white !important;
 }
 
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+}
+
 .form-group h1, .form-group h2 {
     color: black !important;
 }

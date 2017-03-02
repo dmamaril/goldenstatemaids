@@ -1,6 +1,6 @@
 export default {
     logo: {
-        height: '25px'
+        height: '50px'
     },
     navbar: {
         margin: '0',
