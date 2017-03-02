@@ -131,7 +131,7 @@ class BookContainer extends React.Component {
 
                 bed={ this.state.booking.bed }
                 bath={ this.state.booking.bath }
-                freq={ this.state.booking.freq }
+                freq={ this.state.booking.frequency }
                 service_date={ this.state.booking.service_date }
                 service_time={ this.state.booking.service_time }/>
         );
