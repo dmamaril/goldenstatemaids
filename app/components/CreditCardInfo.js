@@ -27,7 +27,7 @@ class CreditCardInfo extends React.Component {
 
         let { value }   = e.target;
         let isValid     = Payment.fns.validateCardNumber(value);
-        
+
         if (isValid) {
             this.props.onChange(e);
         }
@@ -65,7 +65,7 @@ class CreditCardInfo extends React.Component {
 
                 <div className="col-md-12 col-sm-12"> 
                     <label> Card Number </label>
-                    <input onChange={ this.validateCardNumber } required className="form-control" ref="number" name="stripe.number" type="text" placeholder="Card Number" minLength="19"/>
+                    <input onChange={ this.validateCardNumber } required className="form-control" ref="number" name="stripe.number" type="text" placeholder="Card Number"/>
                 </div>
                 
                 <div className="col-md-8 col-sm-12">
