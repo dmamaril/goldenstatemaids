@@ -34,11 +34,17 @@ class Book extends React.Component {
 
                         <div style={ styles.booking_form }>
                             <BookingForm
+
+                                onSubmit={ this.props.onSubmit }
+                                onChange={ this.props.onChange }
+
                                 bed={ this.props.bed }
+                                mins={ this.props.mins }
                                 bath={ this.props.bath }
                                 freq={ this.props.freq }
-                                onSubmit={ this.props.onSubmit }
-                                onChange={ this.props.onChange }/>
+                                total={ this.props.total }
+                                service_date={ this.props.service_date }
+                                service_time={ this.props.service_time }/>
                         </div>
                     </div>
                 </div>

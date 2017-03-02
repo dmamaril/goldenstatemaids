@@ -77,10 +77,13 @@ export default (props) => {
             <Frequency onChange={ props.onChange } freq={ props.freq }/>
 
             <Checkout 
-                beds={ props.dates }
+                bed={ props.bed }
+                bath={ props.bath }
+                freq={ props.freq }
+                mins={ props.mins }
                 total={ props.total }
-                frequency={ props.frequency }
-                service_date = { props.service_date }/>
+                service_date={ props.service_date }
+                service_time={ props.service_time }/>
         </form>
     );
 };

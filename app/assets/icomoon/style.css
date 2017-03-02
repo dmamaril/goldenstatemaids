@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'IcoMoon---Ultimate';
-  src:  url('fonts/IcoMoon---Ultimate.eot?1ftmtl');
-  src:  url('fonts/IcoMoon---Ultimate.eot?1ftmtl#iefix') format('embedded-opentype'),
-    url('fonts/IcoMoon---Ultimate.ttf?1ftmtl') format('truetype'),
-    url('fonts/IcoMoon---Ultimate.woff?1ftmtl') format('woff'),
-    url('fonts/IcoMoon---Ultimate.svg?1ftmtl#IcoMoon---Ultimate') format('svg');
+  src:  url('fonts/IcoMoon---Ultimate.eot?p4c03n');
+  src:  url('fonts/IcoMoon---Ultimate.eot?p4c03n#iefix') format('embedded-opentype'),
+    url('fonts/IcoMoon---Ultimate.ttf?p4c03n') format('truetype'),
+    url('fonts/IcoMoon---Ultimate.woff?p4c03n') format('woff'),
+    url('fonts/IcoMoon---Ultimate.svg?p4c03n#IcoMoon---Ultimate') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-home:before {
+  content: "\e007";
+}
 .icon-certificate:before {
   content: "\e0b1";
 }
@@ -50,6 +53,9 @@
 }
 .icon-stack-cancel:before {
   content: "\e347";
+}
+.icon-loop:before {
+  content: "\e3a8";
 }
 .icon-facebook:before {
   content: "\e49b";
