@@ -1,4 +1,5 @@
 import React        from 'React';
+import { Link }     from 'react-router';
 import styles       from '../styles/review';
 import don_img      from '../assets/don.jpg';
 import tiana_img    from '../assets/tiana.jpg';
@@ -37,9 +38,9 @@ class Review extends React.Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-lg btn-default push-down">
+                <Link to="/book" type="submit" className="btn btn-lg btn-default push-down">
                     BOOK NOW
-                </button>
+                </Link>
             </div> 
         );
     }

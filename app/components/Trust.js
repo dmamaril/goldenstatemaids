@@ -1,4 +1,5 @@
 import React        from 'React';
+import { Link }     from 'react-router';
 import styles       from '../styles/trust';
 
 class Trust extends React.Component {
@@ -29,9 +30,9 @@ class Trust extends React.Component {
                     { this.props.steps.map(this.createTrust) }
                 </div>
 
-                <button type="submit" className="btn btn-lg btn-default push-down">
+                <Link to="/book" className="btn btn-lg btn-default push-down">
                     LEARN MORE
-                </button>
+                </Link>
             </div> 
         );
     }

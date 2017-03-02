@@ -1,4 +1,5 @@
 import React        from 'React';
+import { Link }     from 'react-router';
 import styles       from '../styles/how';
 
 import book_img     from '../assets/book_img.jpg';
@@ -35,9 +36,9 @@ class How extends React.Component {
                     { this.props.steps.map(this.createStep) }
                 </div>
 
-                <a href="/book" className="btn btn-lg btn-primary push-down">
+                <Link to="/book" className="btn btn-lg btn-primary push-down">
                     BOOK APPOINTMENT
-                </a>
+                </Link>
             </div> 
         );
     }
