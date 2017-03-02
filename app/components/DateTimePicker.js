@@ -85,6 +85,19 @@ class DateTimePicker extends React.Component {
         // pull data from fb db;
         let timeslots = await this.getTimeSlots(value);
 
+        // if there are available timeslots, set 1st one as selected service_time;
+        if (timeslots[0] && timeslots[0].display_text !== 'Fully Booked') {
+
+            let mocked_el = {
+                target: {
+                    name    : 'service_time',
+                    value   : timeslots[0].start_time
+                }
+            };
+
+            this.props.onChange(mocked_el);
+        }
+
         this.props.onChange(e);
         this.setState({ timeslots });
     }
@@ -97,12 +110,12 @@ class DateTimePicker extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-sm-12 date" id="datepicker">
-                    <input ref="calendar" type="text" className="form-control" placeholder="MM-DD-YYYY"/>
+                    <input required ref="calendar" type="text" name="service_date" className="form-control" placeholder="MM-DD-YYYY"/>
                 </div>
 
 
                 <div className="col-md-6 col-sm-12">
-                    <select onChange={ this.props.onChange } required className="form-control">
+                    <select name="service_time" onChange={ this.props.onChange } required className="form-control">
                         { (!this.state.timeslots.length ? this.createTimeSlot() : this.state.timeslots.map(this.createTimeSlot)) }
                     </select>
                 </div>
