@@ -90,23 +90,23 @@ class Checkout extends React.Component {
 
                     <hr/>
 
-                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4">
-                        <p style={ styles.summary }>
+                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4" style={ styles.summary }>
+                        <p>
                             <span className="icon-home" style={ styles.icon }></span>
                             { this.getHomeText() }
                         </p>
 
-                        <p style={ styles.summary }>
+                        <p>
                             <span className="icon-calendar" style={ styles.icon }></span>
                             { this.getServiceText() }
                         </p>
 
-                        <p style={ styles.summary }>
+                        <p>
                             <span className="icon-clock" style={ styles.icon }></span>
                             { this.getEstTimeText() }
                         </p>
 
-                        <p style={ styles.summary }>
+                        <p>
                             <span className="icon-loop" style={ styles.icon }></span>
                             { this.getFreqText() }
                         </p>
@@ -114,10 +114,19 @@ class Checkout extends React.Component {
 
                     <hr/>
 
-                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4">
-                        <p> Subtotal: { this.props.subtotal } </p>
-                        <p> Discount: { this.props.discount } </p>
-                        <p> TOTAL: { this.props.total } </p>
+                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4" style={{ ...styles.summary, ...styles.totals }}>
+                        <p>
+                            Subtotal:
+                            <span className="pull-right"> { '$' + this.props.subtotal + '.00' } </span>
+                        </p>
+                        <p>
+                            Discount:
+                                <span className="pull-right"> { '$' + this.props.discount + '.00' } </span>
+                        </p>
+                        <p style={ styles.total }>
+                            Total:
+                            <span className="pull-right" style={ styles.total_price }>{ '$' + this.props.total + '.00' }</span>
+                        </p>
                     </div>
 
                     <hr/>
