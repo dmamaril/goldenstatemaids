@@ -33,7 +33,12 @@ class Book extends React.Component {
                         <h1 className="black-header push-top-down text-center"> YOU'RE ONE STEP AWAY FROM A FRESH HOME </h1>
 
                         <div style={ styles.booking_form }>
-                            <BookingForm onSubmit={ this.props.onSubmit } onChange={ this.props.onChange }/>
+                            <BookingForm
+                                bed={ this.props.bed }
+                                bath={ this.props.bath }
+                                freq={ this.props.freq }
+                                onSubmit={ this.props.onSubmit }
+                                onChange={ this.props.onChange }/>
                         </div>
                     </div>
                 </div>

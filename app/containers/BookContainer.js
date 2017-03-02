@@ -11,7 +11,11 @@ class BookContainer extends React.Component {
 
         super(props);
 
-        this.state = {};
+        let { query }           = props.location;
+        let { bed, bath, freq } = query;
+
+        this.state = { bed: bed || 1, bath: bath || 1, freq: freq || 2 };
+
         // bind methods
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -57,7 +61,10 @@ class BookContainer extends React.Component {
         return (
             <Book
                 onChange={ this.handleChange }
-                onSubmit={ this.handleSubmit }/>
+                onSubmit={ this.handleSubmit }
+                bed={ this.props.location.query.bed }
+                bath={ this.props.location.query.bath }
+                freq={ this.props.location.query.freq } />
         );
     }
 };

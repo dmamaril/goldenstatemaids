@@ -4,9 +4,9 @@ import DateTimePicker   from './DateTimePicker';
 import Frequency        from './Frequency';
 import Extras           from './Extras';
 import Checkout         from './Checkout';
+import HomeInfo         from './HomeInfo';
 
 export default (props) => {
-
     return (
         <form className="form-horizontal booking-form" role="form" onSubmit={ props.onSubmit }>
             <div className="form-group text-center">
@@ -66,41 +66,7 @@ export default (props) => {
                 </div>
             </div>
 
-            <div className="form-group">
-
-                <div className="form-headers">
-                    <h2> Choose Your Service </h2>
-                    <h6> Tell us about your home. </h6>
-                </div>
-
-                <div className="col-md-6 col-sm-12">
-                    <select onChange={ props.onChange } required name="bed" className="form-control">
-                        <option value="1"> 1 Bedroom </option>
-                        <option value="2"> 2 Bedroom </option>
-                        <option value="3"> 3 Bedroom </option>
-                        <option value="4"> 4 Bedroom </option>
-                        <option value="5"> 5 Bedroom </option>
-                        <option value="6"> 6 Bedroom </option>
-                    </select>
-                </div>
-                
-                <div className="col-md-6 col-sm-12">
-                    <select onChange={ props.onChange } required name="bath" className="form-control">
-                        <option value="1"> 1 Bathroom </option>
-                        <option value="1.5"> 1.5 Bathroom </option>
-                        <option value="2"> 2 Bathroom </option>
-                        <option value="2.5"> 2.5 Bathroom </option>
-                        <option value="3"> 3 Bathroom </option>
-                        <option value="3.5"> 3.5 Bathroom </option>
-                        <option value="4"> 4 Bathroom </option>
-                        <option value="4.5"> 4.5 Bathroom </option>
-                        <option value="5"> 5 Bathroom </option>
-                        <option value="5.5"> 5.5 Bathroom </option>
-                        <option value="6"> 6 Bathroom </option>
-                        <option value="6.5"> 6.5 Bathroom </option>
-                    </select>
-                </div>
-            </div>
+            <HomeInfo onChange={ props.onChange } bed={ props.bed } bath={ props.bath }/>
 
             <Extras onChange={ props.onChange } />
 
@@ -108,7 +74,7 @@ export default (props) => {
 
             <CreditCardInfo onChange={ props.onChange }/>
 
-            <Frequency onChange={ props.onChange } />
+            <Frequency onChange={ props.onChange } freq={ props.freq }/>
 
             <Checkout 
                 beds={ props.dates }

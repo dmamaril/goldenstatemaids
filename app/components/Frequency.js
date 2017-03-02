@@ -6,7 +6,7 @@ class Frequency extends React.Component {
 
         super(props);
 
-        this.state          = { frequency: "2" };
+        this.state          = { frequency: props.freq || '2' };
         this.handleChange   = this.handleChange.bind(this);
     }
 
