@@ -90,31 +90,35 @@ class Checkout extends React.Component {
 
                     <hr/>
 
-                    <p style={ styles.summary }>
-                        <span className="icon-home" style={ styles.icon }></span>
-                        { this.getHomeText() }
-                    </p>
+                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4">
+                        <p style={ styles.summary }>
+                            <span className="icon-home" style={ styles.icon }></span>
+                            { this.getHomeText() }
+                        </p>
 
-                    <p style={ styles.summary }>
-                        <span className="icon-calendar" style={ styles.icon }></span>
-                        { this.getServiceText() }
-                    </p>
+                        <p style={ styles.summary }>
+                            <span className="icon-calendar" style={ styles.icon }></span>
+                            { this.getServiceText() }
+                        </p>
 
-                    <p style={ styles.summary }>
-                        <span className="icon-clock" style={ styles.icon }></span>
-                        { this.getEstTimeText() }
-                    </p>
+                        <p style={ styles.summary }>
+                            <span className="icon-clock" style={ styles.icon }></span>
+                            { this.getEstTimeText() }
+                        </p>
 
-                    <p style={ styles.summary }>
-                        <span className="icon-loop" style={ styles.icon }></span>
-                        { this.getFreqText() }
-                    </p>
+                        <p style={ styles.summary }>
+                            <span className="icon-loop" style={ styles.icon }></span>
+                            { this.getFreqText() }
+                        </p>
+                    </div>
 
                     <hr/>
 
-                    <p> Subtotal: { this.props.subtotal } </p>
-                    <p> Discount: { this.props.discount } </p>
-                    <p> TOTAL: { this.props.total } </p>
+                    <div className="col-xs-offset-1 col-sm-offset-3 col-md-offset-4">
+                        <p> Subtotal: { this.props.subtotal } </p>
+                        <p> Discount: { this.props.discount } </p>
+                        <p> TOTAL: { this.props.total } </p>
+                    </div>
 
                     <hr/>
 
