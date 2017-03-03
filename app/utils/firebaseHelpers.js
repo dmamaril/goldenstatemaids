@@ -4,6 +4,15 @@ import cfgs     from '../configs/firebase';
 
 firebase.initializeApp(cfgs);
 
+let _state = {
+
+    teams: {
+        length: 0
+    },
+
+    timeslots: {}
+};
+
 const encodeKey = (s) => encodeURIComponent(s).replace('.', '%2E');
 
 const pushRecord = (ref, val) => {
@@ -21,10 +30,12 @@ export async function setBooking (booking) {
     let key     = encodeKey(booking.service_date);
     let ref     = firebase.database().ref(`booking/${key}`);
 
+    let ts = _state.timeslots;
+
+    booking.team_key = _.get(_state.timeslots, [booking.start_time, '0', 'open_teams', '0'], null);
+
     return await pushRecord(ref, booking);
 };
-
-let teams = { length: 0 };
 
 /**
  * [getTeams description]
@@ -36,18 +47,18 @@ export async function getTeams () {
 
     return new Promise((resolve) => {
 
-        if (teams.length) {
-            return resolve(teams);
+        if (_state.teams.length) {
+            return resolve(_state.teams);
         }
 
         ref.once('value', (ss) => {
 
             ss.forEach(({ key }) => { 
-                teams[key] = 1;
-                teams.length++;
+                _state.teams[key] = 1;
+                _state.teams.length++;
             });
 
-            resolve(teams);
+            resolve(_state.teams);
         });
     });
 };
@@ -135,7 +146,7 @@ export async function getAvailability (date) {
             let start_time          = START_TIMES[i];
             let current_bookings    = bookings[start_time] || [];
             let n_bookings          = current_bookings.length;
-            let open_teams          = _.cloneDeep(teams);
+            let open_teams          = _.cloneDeep(_state.teams);
 
             // remove len prop from clone;
             delete open_teams.length;
@@ -157,7 +168,7 @@ export async function getAvailability (date) {
             }
 
             // if all teams are booked
-            if (n_bookings >= teams.length) {
+            if (n_bookings >= _state.teams.length) {
                 continue;
             }
 
@@ -165,7 +176,15 @@ export async function getAvailability (date) {
             results.push(createAvailability(start_time, open_teams));
         }
 
-        return results.length ? results : [{ display_text: 'Fully Booked' }];
+
+        // reset timeslots cache;
+        if (!results.length) {
+            _state.timeslots = {};
+            return [{ display_text: 'Fully Booked' }];
+        }
+
+        _state.timeslots = _.groupBy(results, 'start_time');
+        return results;
     };
 
     return new Promise((resolve) => {
