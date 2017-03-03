@@ -5,11 +5,6 @@ import book_img     from '../assets/book_img.jpg';
 import clean_img    from '../assets/clean_img.jpg';
 import relax_img    from '../assets/relax_img.jpg';
 
-import book_icon    from '../assets/book_icon.jpg';
-import clean_icon   from '../assets/clean_icon.jpg';
-import relax_icon   from '../assets/relax_icon.jpg';
-
-
 const styles = {
 
     howPanel: {
@@ -20,7 +15,13 @@ const styles = {
     },
 
     howIcon: {
-        height: '150px'
+        fontSize: '75px',
+        color: '#006BB6'
+        // color: '#FDB927'
+    },
+
+    h3: {
+        margin: '0'
     }
 };
 
@@ -33,9 +34,13 @@ class How extends React.Component {
     createStep ({ header, img, icon, text }, index) {
         return (
             <div className="col-md-4 col-sm-12 push-down" key={ index }>
-                <img className="img-responsive" src={ img } />
-                <img className="img-responsive" src={ icon } style={ styles.howIcon }/>
-                <h3> { header } </h3>
+                <img className="img-responsive push-down" src={ img } />
+
+                <div style={ styles.howIcon }>
+                    <span className={ icon }></span>
+                </div>
+
+                <h3 style={ styles.h3 }> { header } </h3>
                 <p> { text } </p>
             </div>
         )
@@ -62,19 +67,19 @@ How.defaultProps = {
         {
             header  : 'book',
             img     : book_img,
-            icon    : book_icon,
+            icon    : 'icon-calendar',
             text    : 'Select the date and time you’d like your professional to show up.'
         },
         {
             header  : 'clean',
             img     : clean_img,
-            icon    : clean_icon,
+            icon    : 'icon-diamond',
             text    : 'A certified cleaner comes over and cleans your place.'
         },
         {
             header  : 'relax',
             img     : relax_img,
-            icon    : relax_icon,
+            icon    : 'icon-sunglasses',
             text    : 'Sit back and relax. Enjoy your sparkling home!'
         }
     ]
