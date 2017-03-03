@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dmamaril/goldenstatemaids#readme",
   "dependencies": {
+    "firebase": "^3.7.0",
     "lodash": "^4.17.4",
     "payment": "^2.2.1",
     "react": "^0.14.6",
@@ -39,7 +40,9 @@
     "file-loader": "^0.10.0",
     "html-webpack-plugin": "^2.7.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.11",
+    "url-loader": "^0.5.8",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "webpack": "^2.2.00",
     "webpack-dev-server": "^1.14.1"
   }
 }

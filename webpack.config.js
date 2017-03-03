@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/app/index.html',
@@ -26,15 +27,21 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+              test: /\.woff(2)?(\?[a-z0-9]+)?$/,
+              loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            }, {
+              test: /\.(ttf|eot|svg|jpg|png)(\?[a-z0-9]+)?$/,
+              loader: "file-loader"
             },
             {
-                test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: "file"
-            }
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+            },
         ]
     },
 
-    plugins: [HTMLWebpackPluginConfig]
+    plugins: [
+        new ExtractTextPlugin('styles.css'),
+        HTMLWebpackPluginConfig
+    ]
 };
