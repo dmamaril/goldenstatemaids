@@ -1,12 +1,12 @@
 import React    from 'react';
-import fridge   from '../assets/booking/fridge.png';
-import oven     from '../assets/booking/oven.png';
-import green    from '../assets/booking/green.png';
-import windows  from '../assets/booking/windows.png';
-import basement from '../assets/booking/basement.png';
-import moving   from '../assets/booking/moving.png';
-import laundry  from '../assets/booking/laundry.png';
-import cabinets from '../assets/booking/cabinets.png';
+import fridge   from '../../assets/booking/fridge.png';
+import oven     from '../../assets/booking/oven.png';
+import green    from '../../assets/booking/green.png';
+import windows  from '../../assets/booking/windows.png';
+import basement from '../../assets/booking/basement.png';
+import moving   from '../../assets/booking/moving.png';
+import laundry  from '../../assets/booking/laundry.png';
+import cabinets from '../../assets/booking/cabinets.png';
 
 class Extras extends React.Component {
 

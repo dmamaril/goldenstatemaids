@@ -1,10 +1,15 @@
 # goldenstatemaids
 
-## Updating GH pages
-https://gist.github.com/cobyism/4730490
+## Booking Transaction
+1. Create User
+2. Create Booking
+3. Charge User
 
+## Deploying
 ```
-npm run webpack
-git add . && git commit -m '[update] ghpage'
-git subtree push --prefix dist origin gh-pages
+npm run webpack && firebase deploy
 ```
+
+## TODO
+1. Client portal
+2. Learn More View

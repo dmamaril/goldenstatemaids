@@ -1,7 +1,7 @@
 import React            from 'react';
 import { Link }         from 'react-router';
 
-import Book             from '../components/Book';
+import Book             from '../components/Booking/Book';
 import pricing          from '../configs/pricing';
 import { setBooking }   from '../utils/firebaseHelpers';
 
@@ -75,15 +75,43 @@ class BookContainer extends React.Component {
         return { subtotal, discount, total, mins }
     }
 
+    /**
+     * [handleSubmit description]
+     *
+     *  attach start_time, end_time & team_id to booking obj;
+     *
+     * calc end_time
+     *  every 60mins is +100 to start time,
+     *  every min left over is +1;
+     * 
+     * @param  {[type]} e [description]
+     * @return {[type]}   [description]
+     */
     async handleSubmit (e) {
 
         e.preventDefault();
 
-        return console.log(this.state);
-
         try {
 
-            let booking = await setBooking(this.state.booking);
+            let {
+                mins,
+                booking,
+            } = this.state;
+
+            let est_time    = this.state.mins;
+            let add_mins    = (est_time % 60);
+            let add_hrs     = Math.floor(est_time / 60) * 100;
+            
+            let start_time  = Number(booking.service_time);
+            let end_time    = start_time + add_hrs + add_mins;
+
+            booking.start_time  = start_time;
+            booking.end_time    = end_time;
+
+            delete booking.service_time;
+
+            let result = await setBooking(booking);
+
 
         } catch (err) {
 

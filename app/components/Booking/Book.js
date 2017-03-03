@@ -1,7 +1,7 @@
 import React            from 'react';
 import { Link }         from 'react-router';
 import BookingForm      from './BookingForm';
-import background       from '../assets/book.jpg';
+import background       from '../../assets/book.jpg';
 
 const styles = {
 

@@ -18,9 +18,9 @@ const pushRecord = (ref, val) => {
  */
 export async function setBooking (booking) {
 
-    let key     = encodeKey(booking.email);
+    let key     = encodeKey(booking.service_date);
     let ref     = firebase.database().ref(`booking/${key}`);
-    
+
     return await pushRecord(ref, booking);
 };
 
@@ -103,7 +103,6 @@ export async function getAvailability (date) {
             display_text += (end_hr < 12 ? ' AM' : ' PM');
         }
 
-
         return ({ start_time, display_text, open_teams });
     };
 
@@ -136,7 +135,6 @@ export async function getAvailability (date) {
             let start_time          = START_TIMES[i];
             let current_bookings    = bookings[start_time] || [];
             let n_bookings          = current_bookings.length;
-
             let open_teams          = _.cloneDeep(teams);
 
             // remove len prop from clone;

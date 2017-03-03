@@ -1,6 +1,6 @@
 import React                            from 'react';
 import { findDOMNode }                  from 'react-dom';
-import { getTeams,  getAvailability }   from '../utils/firebaseHelpers.js';
+import { getTeams,  getAvailability }   from '../../utils/firebaseHelpers.js';
 
 const styles = {
     fontHeavy: {
