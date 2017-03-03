@@ -1,7 +1,7 @@
 import React    from 'react';
 import { Link } from 'react-router';
 import logo_sm  from '../assets/logo/logo-03.png';
-import logo_lg  from '../assets/logo/logo-01.png';
+import logo_lg  from '../assets/logo/logo-02.png';
 
 const styles = {
     logo: {
@@ -12,6 +12,11 @@ const styles = {
         padding: '0 10%',
         backgroundColor: 'transparent',
         borderColor: 'transparent'
+    },
+    link: {
+        fontWeight: '400',
+        color: 'white',
+        fontSize: '18px'
     }
 };
 
@@ -83,7 +88,7 @@ class HeaderContainer extends React.Component {
                         <ul className="nav navbar-nav">
                             { /*<li><Link to="/login">Login<span className="sr-only">(current)</span></Link></li>
                             <li><Link to="/about">About</Link></li> */ }
-                            <li><Link to="/book">Book Now</Link></li>
+                            <li><Link to="/book" style={ styles.link }>Book Now</Link></li>
                         </ul>
                     </div>
                 </div>
