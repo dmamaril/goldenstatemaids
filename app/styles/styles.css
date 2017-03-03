@@ -76,8 +76,8 @@ h1, h2 {
 .booking-frequency .checked {
     color: white;
     font-weight: 300;
-    border-color: #0ca9bb;
-    background-color: #0ca9bb;
+    border-color: #006bb6;
+    background-color: #006bb6;
 }
 
 .booking-frequency label {
@@ -110,11 +110,11 @@ h1, h2 {
 .booking-option label .checked {
     position: relative;
     top: -65px;
-    background-color: #0ca9bb;
+    background-color: #006bb6;
 }
 
 .booking-option label:not(.checked) img:hover {
     position: relative;
     top: -65px;
-    background-color: #ff684c;
+    background-color: #fdb927;
 }

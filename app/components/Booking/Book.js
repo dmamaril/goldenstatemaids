@@ -34,11 +34,11 @@ const styles = {
     },
 
     container: {
-        backgroundColor: 'beige',
+        backgroundColor: 'white',
     },
 
     booking: {
-        width: '90%',
+        width: '80%',
         margin: '0 auto'
     },
 

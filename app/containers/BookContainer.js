@@ -112,7 +112,6 @@ class BookContainer extends React.Component {
 
             let result = await setBooking(booking);
 
-
         } catch (err) {
 
             console.log(err);
