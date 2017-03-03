@@ -1,6 +1,17 @@
-import React        from 'React';
+import React        from 'react';
 import { Link }     from 'react-router';
-import styles       from '../styles/trust';
+
+const styles = {
+    container: {
+        paddingTop: '50px',
+        backgroundColor: '#262626',
+        color: 'white !important'
+    },
+
+    icon: {
+        fontSize: '2em'
+    }
+};
 
 class Trust extends React.Component {
 

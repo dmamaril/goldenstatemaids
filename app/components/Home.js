@@ -1,9 +1,23 @@
 import React from 'react';
-import styles from '../styles/home';
 import How from './How';
 import Trust from './Trust';
 import Review from './Review';
 import { Link } from 'react-router';
+import bg_url from '../assets/home.jpg';
+
+const styles = {
+    bgImg: {
+        height: '80vh',
+        backgroundSize: 'cover',
+        WebkitBackgroundSize: 'cover',
+        background: `url(${ bg_url }) no-repeat center center`
+    },
+
+    jumbotron: {
+        backgroundColor: 'white',
+        marginBottom: '0'
+    }
+};
 
 class Home extends React.Component {
     render () {

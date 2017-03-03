@@ -1,6 +1,5 @@
-import React        from 'React';
+import React        from 'react';
 import { Link }     from 'react-router';
-import styles       from '../styles/how';
 
 import book_img     from '../assets/book_img.jpg';
 import clean_img    from '../assets/clean_img.jpg';
@@ -10,6 +9,20 @@ import book_icon    from '../assets/book_icon.jpg';
 import clean_icon   from '../assets/clean_icon.jpg';
 import relax_icon   from '../assets/relax_icon.jpg';
 
+
+const styles = {
+
+    howPanel: {
+        marginBottom: '50px'
+    },
+
+    howImg: {
+    },
+
+    howIcon: {
+        height: '150px'
+    }
+};
 
 class How extends React.Component {
 

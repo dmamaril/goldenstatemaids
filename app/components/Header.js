@@ -1,9 +1,19 @@
 import React    from 'react';
 import { Link } from 'react-router';
-import styles   from '../styles/header';
 import logo_sm  from '../assets/logo/logo-03.png';
 import logo_lg  from '../assets/logo/logo-01.png';
 
+const styles = {
+    logo: {
+        height: '50px'
+    },
+    navbar: {
+        margin: '0',
+        padding: '0 10%',
+        backgroundColor: 'transparent',
+        borderColor: 'transparent'
+    }
+};
 
 /**
  * 

@@ -1,7 +1,12 @@
 import React                            from 'react';
 import { findDOMNode }                  from 'react-dom';
-import styles                           from '../styles/datepicker.js';
 import { getTeams,  getAvailability }   from '../utils/firebaseHelpers.js';
+
+const styles = {
+    fontHeavy: {
+        fontWeight: '700'
+    }
+};
 
 const DATEPICKER_CFGS = {
     format          : 'mm-dd-yyyy',

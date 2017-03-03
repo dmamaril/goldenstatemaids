@@ -1,10 +1,41 @@
-import React        from 'React';
+import React        from 'react';
 import { Link }     from 'react-router';
-import styles       from '../styles/review';
+
+import bg           from '../assets/flowers.jpg';
 import don_img      from '../assets/don.jpg';
 import tiana_img    from '../assets/tiana.jpg';
 import justin_img   from '../assets/justin.jpg';
 
+const styles = {
+
+    container: {
+        backgroundImage: `url(${ bg })`,
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        WebkitBackgroundSize: 'cover'
+    },
+
+    reviews: {
+        background: 'rgba(255, 255, 255, 0.8)',
+        padding: '10px'
+    },
+
+    img: {
+        height: '100px'
+    },
+
+    center: {
+        margin: '0 auto',
+    },
+
+    flex: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        flexWrap: 'wrap'
+    }
+};
 
 class Review extends React.Component {
 
