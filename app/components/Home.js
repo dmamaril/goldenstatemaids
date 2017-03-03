@@ -9,7 +9,7 @@ import Header from './Header';
 const styles = {
     bgImg: {
         height: '80vh',
-        padding: '25px 0',
+        paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
         background: `url(${ bg_url }) no-repeat center center`
@@ -19,6 +19,10 @@ const styles = {
     jumbotron: {
         backgroundColor: 'white',
         marginBottom: '0',
+    },
+
+    jumboText: {
+        marginTop: '75px'
     }
 };
 
@@ -30,7 +34,7 @@ class Home extends React.Component {
 
                     <Header />
 
-                    <h1>We Clean. You Relax.</h1>
+                    <h1 style={ styles.jumboText }>We Clean. You Relax.</h1>
                 </div>
 
                 <How />

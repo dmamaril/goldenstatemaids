@@ -2,6 +2,7 @@ import React            from 'react';
 import { Link }         from 'react-router';
 import BookingForm      from './BookingForm';
 import background       from '../../assets/book.jpg';
+import Header           from '../Header';
 
 const styles = {
 
@@ -65,6 +66,9 @@ class Book extends React.Component {
         return (
             <div>
                 <div className="container text-center" style={ styles.background }>
+
+                    <Header />
+
                     <h1 className="push-down" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
                     <div className="row" style={ styles.trustRow }>
                         { this.props.trust_elements.map(this.createTrust) }
