@@ -19,7 +19,8 @@ const styles = {
 
     reviews: {
         background: 'rgba(255, 255, 255, 0.8)',
-        padding: '10px'
+        padding: '10px',
+        borderRadius: '10px'
     },
 
     img: {
@@ -61,7 +62,7 @@ class Review extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center" style={ styles.container }>
-                <h1 className="white-header"> HAPPY CUSTOMERS </h1>
+                <h1 className="white-header"> <span className="icon-facebook"></span> HAPPY CUSTOMERS </h1>
                 
                 <div className="container">
                     <div className="row" style={ styles.flex }>

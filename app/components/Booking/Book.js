@@ -14,7 +14,8 @@ const styles = {
     },
 
     header: {
-        fontWeight: '400'
+        fontWeight: '400',
+        marginTop: '75px'
     },
 
     trust: {
