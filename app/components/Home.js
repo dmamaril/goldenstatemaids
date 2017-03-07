@@ -22,7 +22,7 @@ const styles = {
 
 
     jumbotron: {
-        backgroundColor: 'white',
+        backgroundColor: '#006bb6',
         marginBottom: '0',
     },
 
@@ -36,12 +36,21 @@ const styles = {
 
     quickform: {
         width: '80%',
-        margin: '0 auto'
+        margin: '50px auto 0'
     },
 
     submit: {
         padding: '15px',
         borderRadius: '0px'
+    },
+
+    noMargin: {
+        margin: 0
+    },
+
+    yellow: {
+        backgroundColor: '#FDB927',
+        border: '1px solid #FDB927'
     }
 };
 
@@ -113,11 +122,28 @@ class Home extends React.Component {
                 <Review />
 
                 <div className="jumbotron text-center" style={ styles.jumbotron }>
-                    <h2 className="black-header"> BOOK A HOUSE CLEANING IN 60 SECONDS </h2>
 
-                    <Link to="/book" className="btn btn-lg btn-primary">
-                        BOOK APPOINTMENT
-                    </Link>
+                    <h1 style={ { ...styles.jumboText, ...styles.noMargin } }> Ready for more "you" time? </h1>
+                    <h1 style={ { ...styles.jumboText, ...styles.noMargin } }> Sign up today. </h1>
+
+                    <div className="quick-form container" style={ styles.quickform }>
+                        <Dropdown
+                            class={ 'col-xs-6 col-sm-6 col-md-4' }
+                            default={ this.props.beds.default }
+                            options={ this.props.beds.options }
+                            onSelect={ this.onSelect('bed') }
+                        />
+                        <Dropdown
+                            class={ 'col-xs-6 col-sm-6 col-md-4' }
+                            default={ this.props.baths.default }
+                            options={ this.props.baths.options }
+                            onSelect={ this.onSelect('bath') }
+                        />
+
+                        <Link to={ this.state.query  } className="btn btn-large btn-primary col-xs-12 col-sm-12 col-md-4" style={ { ...styles.submit, ...styles.yellow } }>
+                            Schedule for ${ this.state.total }
+                        </Link>
+                    </div>
                 </div>
             </div>
         );
