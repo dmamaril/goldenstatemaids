@@ -8,6 +8,7 @@ import How                  from './How';
 import Trust                from './Trust';
 import Review               from './Review';
 import Header               from './Header';
+import Footer               from './Footer';
 import Dropdown             from './Dropdown';
 
 
@@ -22,7 +23,7 @@ const styles = {
 
 
     jumbotron: {
-        backgroundColor: '#006bb6',
+        backgroundColor: '#3d77ea',
         marginBottom: '0',
     },
 
@@ -50,7 +51,8 @@ const styles = {
 
     yellow: {
         backgroundColor: '#FDB927',
-        border: '1px solid #FDB927'
+        border: '1px solid #FDB927',
+        color: 'black'
     }
 };
 
@@ -145,6 +147,8 @@ class Home extends React.Component {
                         </Link>
                     </div>
                 </div>
+
+                <Footer />
             </div>
         );
     }

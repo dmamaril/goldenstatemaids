@@ -20,7 +20,7 @@ const styles = {
 
     howIcon: {
         fontSize: '50px',
-        color: '#006BB6'
+        color: '#3d77ea'
         // color: '#FDB927'
     },
 

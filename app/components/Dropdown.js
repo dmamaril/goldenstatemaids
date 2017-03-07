@@ -16,8 +16,8 @@ const styles = {
         backgroundColor: 'white',
 
         padding: '15px',
-        borderLeft: '1px solid blue',
-        borderRight: '1px solid blue',
+        borderLeft: '1px solid #3d77ea',
+        borderRight: '1px solid #3d77ea',
         borderBottom: '1px solid lightgray'
     },
 
@@ -76,7 +76,7 @@ class Dropdown extends React.Component {
         let border = {};
 
         if (index === options.length-1) {
-            border.borderBottom = '1px solid blue';
+            border.borderBottom = '1px solid #3d77ea';
         }
 
         return (
@@ -92,7 +92,7 @@ class Dropdown extends React.Component {
 
         if (this.state.isActive) {
 
-            style.border = '1px solid blue';
+            style.border = '1px solid #3d77ea';
             style.borderBottom = '1px solid lightgray';
 
 

@@ -4,7 +4,7 @@ import { Link }     from 'react-router';
 const styles = {
     container: {
         paddingTop: '50px',
-        backgroundColor: '#006BB6',
+        backgroundColor: '#3d77ea',
         color: 'white !important'
     },
 
