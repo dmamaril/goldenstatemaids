@@ -7,6 +7,7 @@ import Header           from '../Header';
 const styles = {
 
     bgImg: {
+        height: '80vh',
         paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
@@ -77,9 +78,10 @@ class Book extends React.Component {
 
                     <div style={ styles.mainContainer }>
                         <h1 className="" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
-                        <div className="row" style={ styles.trustRow }>
+
+                        { /* <div className="row" style={ styles.trustRow }>
                             { this.props.trust_elements.map(this.createTrust) }
-                        </div>
+                        </div> */ }
                     </div>
                 </div>
 
