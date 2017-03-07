@@ -2,8 +2,8 @@ import React            from 'react';
 import { Link }         from 'react-router';
 
 import Book             from '../components/Booking/Book';
-import pricing          from '../configs/pricing';
 import { setBooking }   from '../utils/firebaseHelpers';
+import calcPriceTotal   from '../utils/calcPriceTotal'
 
 
 class BookContainer extends React.Component {
@@ -18,61 +18,12 @@ class BookContainer extends React.Component {
         let booking = { bed: bed || 1, bath: bath || 1, frequency: freq || 2, options: {} };
         this.state  = { booking };
 
-        let totals  = this.updateTotals();
+        let totals  = calcPriceTotal(this.state.booking);
         this.state  = Object.assign(this.state, totals);
 
         // bind methods
-        this.updateTotals   = this.updateTotals.bind(this);
         this.handleChange   = this.handleChange.bind(this);
         this.handleSubmit   = this.handleSubmit.bind(this);
-    }
-
-    updateTotals () {
-
-        let { bed, bath, frequency, options } = this.state.booking;
-
-        let baths   = pricing.bath;
-        let freqs   = pricing.freqs;
-        let beds    = pricing.bed[bed];
-
-        let total    = 0;
-        let mins     = 0;
-        let subtotal = 0;
-        let discount = 0;
-
-        // add bed subtotals;
-        subtotal += beds.price;
-        mins += beds.mins;
-
-        // add bath subtotals;
-        subtotal += baths.price * bath;
-        mins += baths.mins * bath;
-
-        // add option subtotals;
-        for (let option in options) {
-
-            // options { [option]: bool }
-            if (options[option]) {
-
-                // an option was selected;
-                subtotal += pricing.options[option].price;
-                mins += pricing.options[option].mins;
-                
-            } else {
-
-                // an option was deselected
-                subtotal -= pricing.options[option].price;
-                mins -= pricing.options[option].mins;
-            }
-        }
-
-        // apply discount based on recurrence
-        discount = Math.round(subtotal * freqs[frequency]);
-
-        // calc diff between subtotal & discount
-        total = subtotal - discount;
-
-        return { subtotal, discount, total, mins }
     }
 
     /**
@@ -139,9 +90,7 @@ class BookContainer extends React.Component {
 
         // update totals if any options, beds or baths changed;
         if (key === 'options' || key === 'bed' || key === 'bath' || key === 'frequency') {
-
-            let { total, mins, discount, subtotal } = this.updateTotals();
-            this.setState({ total, mins, discount, subtotal });
+            this.setState(calcPriceTotal(this.state.booking));
         }
     }
 
