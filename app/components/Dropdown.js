@@ -3,22 +3,28 @@ import React from 'react';
 const styles = {
 
     container: {
-        float: 'left',
-        userSelect: 'none'
+        userSelect: 'none',
+        padding: '0'
     },
 
     option: {
-        display: 'block',
-        cursor: 'pointer',
         textDecoration: 'none',
+        cursor: 'pointer',
+
+        display: 'block',
         color: 'black',
         backgroundColor: 'white',
+
         padding: '15px',
         borderLeft: '1px solid blue',
         borderRight: '1px solid blue',
         borderBottom: '1px solid lightgray'
     },
 
+    options: {
+        position: 'absolute',
+        width: '100%'
+    }
 };
 
 
@@ -96,13 +102,13 @@ class Dropdown extends React.Component {
         }
 
         return (
-            <div className="gsm-dropdown" onClick={ this.toggleDropdown } style={ { ...styles.container, ...this.props.styles } }>
+            <div className={ "gsm-dropdown " + this.props.class } onClick={ this.toggleDropdown } style={ styles.container }>
 
                 <a style={ { ...styles.option, ...style } }>
                     { this.state.selection.text }
                 </a>
 
-                <div className={ this.state.isActive ? 'gsm-dropdown-options-visible' : 'gsm-dropdown-options' }>
+                <div className={ this.state.isActive ? 'gsm-dropdown-options-visible' : 'gsm-dropdown-options' } style={ styles.options }>
                     { this.props.options.map(this.createOption.bind(this)) }
                 </div>
             </div>

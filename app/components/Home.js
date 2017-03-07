@@ -28,6 +28,15 @@ const styles = {
 
     dropdown: {
         width: '10% !important'
+    },
+
+    quickform: {
+        width: '80%',
+        margin: '0 auto'
+    },
+
+    submit: {
+        padding: '15px'
     }
 };
 
@@ -53,18 +62,24 @@ class Home extends React.Component {
 
                     <h1 style={ styles.jumboText }>We Clean. You Relax.</h1>
 
-                    <Dropdown
-                        styles={ styles.dropdown }
-                        default={ this.props.beds.default }
-                        options={ this.props.beds.options }
-                        onSelect={ this.onSelect('beds') }
-                    />
-                    <Dropdown
-                        styles={ styles.dropdown }
-                        default={ this.props.baths.default }
-                        options={ this.props.baths.options }
-                        onSelect={ this.onSelect('baths') }
-                    />
+                    <div className="quick-form container" style={ styles.quickform }>
+                        <Dropdown
+                            class={ 'col-xs-6 col-sm-6 col-md-4' }
+                            default={ this.props.beds.default }
+                            options={ this.props.beds.options }
+                            onSelect={ this.onSelect('beds') }
+                        />
+                        <Dropdown
+                            class={ 'col-xs-6 col-sm-6 col-md-4' }
+                            default={ this.props.baths.default }
+                            options={ this.props.baths.options }
+                            onSelect={ this.onSelect('baths') }
+                        />
+
+                        <button className="btn btn-large btn-success col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
+                            Submit booking for $87
+                        </button>
+                    </div>
                 </div>
 
                 <How />
