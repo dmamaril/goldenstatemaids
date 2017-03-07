@@ -1,5 +1,6 @@
 import React                from 'react';
 import { Link }             from 'react-router';
+import querystring          from 'querystring';
 import calcPriceTotal       from '../utils/calcPriceTotal'
 import bg_url               from '../assets/home.jpg';
 
@@ -54,10 +55,11 @@ class Home extends React.Component {
             bath        : props.baths.default.value,
         };
 
-        let { total } = calcPriceTotal(booking);
+        let { total }   = calcPriceTotal(booking);
+        let query       = `/book?${ querystring.stringify(booking) }`;
 
 
-        this.state      = { booking, total };
+        this.state      = { booking, total, query };
         this.onSelect   = this.onSelect.bind(this);
     }
 
@@ -67,8 +69,10 @@ class Home extends React.Component {
             let booking     = this.state.booking;
             booking[key]    = value;
 
+            let query       = `/book?${ querystring.stringify(booking) }`;
             let { total }   = calcPriceTotal(booking);
-            this.setState({ booking, total });
+
+            this.setState({ booking, total, query });
         };
     }
 
@@ -95,9 +99,9 @@ class Home extends React.Component {
                             onSelect={ this.onSelect('bath') }
                         />
 
-                        <button className="btn btn-large btn-success col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
+                        <Link to={ this.state.query  } className="btn btn-large btn-success col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
                             Schedule for ${ this.state.total }
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
