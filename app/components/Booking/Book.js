@@ -6,11 +6,11 @@ import Header           from '../Header';
 
 const styles = {
 
-    background: {
+    bgImg: {
+        paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
         background: `url(${ background }) no-repeat center center`,
-        marginBottom: '0'
     },
 
     header: {
@@ -44,6 +44,11 @@ const styles = {
     },
 
     booking_form: {
+    },
+
+    mainContainer: {
+        width: '80%',
+        margin: '0 auto'
     }
 };
 
@@ -65,17 +70,19 @@ class Book extends React.Component {
     render () {
         return (
             <div>
-                <div className="container text-center" style={ styles.background }>
+                <div className="jumbotron text-center" style={ styles.bgImg }>
 
                     <Header />
 
-                    <h1 className="push-down" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
-                    <div className="row" style={ styles.trustRow }>
-                        { this.props.trust_elements.map(this.createTrust) }
+                    <div style={ styles.mainContainer }>
+                        <h1 className="" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
+                        <div className="row" style={ styles.trustRow }>
+                            { this.props.trust_elements.map(this.createTrust) }
+                        </div>
                     </div>
                 </div>
 
-                <div className="container" style={ styles.container }>
+                <div style={ styles.container }>
                     <div className="row" style={ styles.booking }>
                         <h1 className="black-header push-top-down text-center"> YOU'RE ONE STEP AWAY FROM A FRESH HOME </h1>
 
