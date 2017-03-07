@@ -8,6 +8,12 @@ import moving   from '../../assets/booking/moving.png';
 import laundry  from '../../assets/booking/laundry.png';
 import cabinets from '../../assets/booking/cabinets.png';
 
+const styles = {
+    header: {
+        marginBottom: '20px'
+    }
+};
+
 class Extras extends React.Component {
 
     constructor (props) {
@@ -44,7 +50,7 @@ class Extras extends React.Component {
                         <img className={ isChecked } src={ icon }/>
                     </label>
 
-                    <p> { text } </p>
+                    <p className="text-capitalize"> { text } </p>
                 </div>
         );
     }
@@ -53,7 +59,7 @@ class Extras extends React.Component {
         return (
             <div className="form-group booking-options">
 
-                <div className="form-headers">
+                <div className="form-headers" style={ styles.header }>
                     <h2> How often? </h2>
                     <h6> It’s all about matching you with the perfect cleaner for your home. Scheduling is flexible. Cancel or reschedule anytime. </h6>
                 </div>
@@ -69,32 +75,12 @@ Extras.defaultProps = {
         {
             id: 'fridge',
             icon: fridge,
-            text: 'inside the fridge'
+            text: 'fridge'
         },
         {
             id: 'oven',
             icon: oven,
-            text: 'inside the oven'
-        },
-        {
-            id: 'green',
-            icon: green,
-            text: 'green cleaning'
-        },
-        {
-            id: 'windows',
-            icon: windows,
-            text: 'inside windows'
-        },
-        {
-            id: 'basement',
-            icon: basement,
-            text: 'basement'
-        },
-        {
-            id: 'moving',
-            icon: moving,
-            text: 'move in/move out'
+            text: 'inside oven'
         },
         {
             id: 'laundry',
@@ -106,6 +92,26 @@ Extras.defaultProps = {
             icon: cabinets,
             text: 'inside cabinets'
         }
+        // {
+        //     id: 'windows',
+        //     icon: windows,
+        //     text: 'inside windows'
+        // },
+        // {
+        //     id: 'green',
+        //     icon: green,
+        //     text: 'green cleaning'
+        // },
+        // {
+        //     id: 'basement',
+        //     icon: basement,
+        //     text: 'basement'
+        // },
+        // {
+        //     id: 'moving',
+        //     icon: moving,
+        //     text: 'move in/move out'
+        // },
     ]
 }
 

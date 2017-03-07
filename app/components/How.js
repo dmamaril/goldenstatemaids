@@ -7,6 +7,10 @@ import relax_img    from '../assets/relax_img.jpg';
 
 const styles = {
 
+    container: {
+        width: '80%'
+    },
+
     howPanel: {
         marginBottom: '50px'
     },
@@ -15,7 +19,7 @@ const styles = {
     },
 
     howIcon: {
-        fontSize: '75px',
+        fontSize: '50px',
         color: '#006BB6'
         // color: '#FDB927'
     },
@@ -48,7 +52,7 @@ class How extends React.Component {
 
     render () {
         return (
-            <div className="container container-fluid text-center">
+            <div className="container container-fluid text-center" style={ styles.container }>
                 <h1 className="black-header"> HOW GOLDEN STATE MAIDS WORKS </h1>
                 <div className="row">
                     { this.props.steps.map(this.createStep) }

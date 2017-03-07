@@ -1,5 +1,11 @@
 import React from 'react';
 
+const styles = {
+    header: {
+        marginBottom: '20px'
+    }
+}
+
 class Frequency extends React.Component {
 
     constructor (props) {
@@ -23,7 +29,7 @@ class Frequency extends React.Component {
         return (
             <div className="form-group booking-frequency">
 
-                <div className="form-headers">
+                <div className="form-headers" style={ styles.header }>
                     <h2> How often? </h2>
                     <h6> It’s all about matching you with the perfect cleaner for your home. Scheduling is flexible. Cancel or reschedule anytime. </h6>
                 </div>

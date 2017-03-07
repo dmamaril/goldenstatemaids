@@ -2,6 +2,12 @@ import React from 'react';
 import Payment from 'payment';
 import { findDOMNode } from 'react-dom';
 
+const styles = {
+    header: {
+        marginBottom: '20px'
+    }
+};
+
 class CreditCardInfo extends React.Component {
 
     constructor (props) {
@@ -58,7 +64,7 @@ class CreditCardInfo extends React.Component {
 
         return (
             <div className="form-group">
-                <div className="form-headers">
+                <div className="form-headers" style={ styles.header }>
                     <h2> Payment Details </h2>
                     <h6> Enter your card information below. You will be charged after service has been rendered. </h6>
                 </div>

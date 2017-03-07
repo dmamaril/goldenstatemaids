@@ -115,7 +115,7 @@ class Home extends React.Component {
                 <div className="jumbotron text-center" style={ styles.jumbotron }>
                     <h2 className="black-header"> BOOK A HOUSE CLEANING IN 60 SECONDS </h2>
 
-                    <Link to="/book" className="btn btn-lg btn-danger">
+                    <Link to="/book" className="btn btn-lg btn-primary">
                         BOOK APPOINTMENT
                     </Link>
                 </div>
