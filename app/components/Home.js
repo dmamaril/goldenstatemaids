@@ -40,7 +40,8 @@ const styles = {
     },
 
     submit: {
-        padding: '15px'
+        padding: '15px',
+        borderRadius: '0px'
     }
 };
 
@@ -99,7 +100,7 @@ class Home extends React.Component {
                             onSelect={ this.onSelect('bath') }
                         />
 
-                        <Link to={ this.state.query  } className="btn btn-large btn-success col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
+                        <Link to={ this.state.query  } className="btn btn-large btn-primary col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
                             Schedule for ${ this.state.total }
                         </Link>
                     </div>
