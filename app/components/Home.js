@@ -112,7 +112,7 @@ class Home extends React.Component {
                         />
 
                         <Link to={ this.state.query  } className="btn btn-large btn-primary col-xs-12 col-sm-12 col-md-4" style={ styles.submit }>
-                            Schedule for ${ this.state.total }
+                            Book from ${ this.state.total }
                         </Link>
                     </div>
                 </div>
@@ -143,7 +143,7 @@ class Home extends React.Component {
                         />
 
                         <Link to={ this.state.query  } className="btn btn-large btn-primary col-xs-12 col-sm-12 col-md-4" style={ { ...styles.submit, ...styles.yellow } }>
-                            Schedule for ${ this.state.total }
+                            Book from ${ this.state.total }
                         </Link>
                     </div>
                 </div>

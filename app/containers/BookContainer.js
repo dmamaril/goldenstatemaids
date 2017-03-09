@@ -4,6 +4,7 @@ import { Link }         from 'react-router';
 import Book             from '../components/Booking/Book';
 import { setBooking }   from '../utils/firebaseHelpers';
 import calcPriceTotal   from '../utils/calcPriceTotal'
+import { chargeUser }   from '../utils/stripeHelpers'
 
 
 class BookContainer extends React.Component {
@@ -30,7 +31,7 @@ class BookContainer extends React.Component {
      * [handleSubmit description]
      *
      *  attach start_time, end_time & team_id to booking obj;
-     *
+     * 
      * calc end_time
      *  every 60mins is +100 to start time,
      *  every min left over is +1;
@@ -46,6 +47,8 @@ class BookContainer extends React.Component {
 
             let {
                 mins,
+                total,
+                stripe,
                 booking,
             } = this.state;
 
@@ -62,6 +65,7 @@ class BookContainer extends React.Component {
             delete booking.service_time;
 
             let result = await setBooking(booking);
+            let charge = await chargeUser(booking.email, stripe, total)
 
         } catch (err) {
 
