@@ -32,6 +32,10 @@ const styles = {
         minHeight: '40vh'
     },
 
+    detailItemsContainer: {
+        marginTop: '15px'
+    },
+
     p: {
         color: '#14374C',
         fontSize: '16px',
@@ -104,7 +108,7 @@ const styles = {
     },
 
     padBottom: {
-        paddingBottom: '50px'
+        paddingBottom: '5px'
     }
 };
 
@@ -229,7 +233,7 @@ class Cleaning extends React.Component {
                         </p>
                     </div>
 
-                    <div className="col-sm-12 col-md-6" style={ {} }>
+                    <div className="col-sm-12 col-md-6" style={ styles.detailItemsContainer }>
                         
                         <div className="col-xs-12 col-sm-6" style={ { ...styles.detailItems, ...styles.light } }>
                             <img className="pull-left" src={ fridge } />
