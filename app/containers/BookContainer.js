@@ -50,6 +50,7 @@ class BookContainer extends React.Component {
                 total,
                 stripe,
                 booking,
+                description,
             } = this.state;
 
             let est_time    = this.state.mins;
@@ -65,10 +66,13 @@ class BookContainer extends React.Component {
             delete booking.service_time;
 
             let result = await setBooking(booking);
-            let charge = await chargeUser(booking.email, total);
+            let charge = await chargeUser(booking.email, description, total);
+
+            this.context.router.push('/cleaning');
 
         } catch (err) {
 
+            // write to firebase;
             console.log(err);
             debugger;
         }
@@ -77,8 +81,6 @@ class BookContainer extends React.Component {
     handleChange ({ target }) {
 
         let { name, value } = target;
-
-        console.log('changing', name, value);
 
         name.indexOf('stripe') === -1
             ? this.updateState('booking', name, value)
@@ -116,6 +118,10 @@ class BookContainer extends React.Component {
                 service_time={ this.state.booking.service_time }/>
         );
     }
+};
+
+BookContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired
 };
 
 export default BookContainer;

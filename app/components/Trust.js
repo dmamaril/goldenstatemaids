@@ -69,7 +69,7 @@ Trust.defaultProps = {
         {
             header  : 'easy to get help',
             icon    : 'icon-phone',
-            text    : 'We bring our own safe supplies. et us know of any special requests and we’ll make it happen.'
+            text    : 'We bring our own safe supplies. Let us know of any special requests and we’ll make it happen.'
         },
         {
             header  : 'seamless communication',
