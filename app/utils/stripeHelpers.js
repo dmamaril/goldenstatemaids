@@ -1,9 +1,9 @@
 import key      from '../configs/stripe';
 import image    from '../assets/logo/logo-stripe.png';
 
-let resolve, amt, desc;
+let RESOLVE, REJECT, amt, desc;
 
-const URI = 'http://localhost:3000/charge';
+const URI = 'https://goldenstatemaids.herokuapp.com/charge';
 
 const handler = StripeCheckout.configure(
     {
@@ -16,9 +16,16 @@ const handler = StripeCheckout.configure(
             let source      = id;
             let amount      = amt;
             let description = desc;
-            let charge      = await submit({ amount, source, description });
 
-            resolve(charge);
+            try {
+
+                let charge = await submit({ amount, source, description });  
+                RESOLVE(charge);
+
+            } catch (e) {
+                REJECT(e);
+            }
+
         }
     }
 );
@@ -48,9 +55,12 @@ export async function chargeUser(email, description, amount) {
     amount = amount * 100;
 
     // Create a new customer and then a new charge for that customer: 
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
 
-        resolve = res;
+        RESOLVE = res;
+        REJECT  = rej;
+        amt     = amount;
+        desc    = description;
 
         handler.open({
             email,
