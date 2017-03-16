@@ -4,7 +4,6 @@ body {
 
 h1, h2 {
     font-weight: 100;
-    color: white !important;
 }
 
 .btn-primary {
@@ -19,7 +18,7 @@ h1, h2 {
 }
 
 .form-group h1, .form-group h2 {
-    color: black !important;
+    color: black;
 }
 
 .form-group {
@@ -52,13 +51,13 @@ h1, h2 {
 }
 
 .black-header {
-    color: black !important;
+    color: black;
     margin-bottom: 50px;
     font-weight: 400;
 }
 
 .white-header {
-    color: white !important;
+    color: white;
     margin-bottom: 50px;
     font-weight: 400;
 }
@@ -146,4 +145,12 @@ h1, h2 {
     z-index: 1;
     transform: translateY(0%);
     transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+.color-white {
+    color: white !important;
+}
+
+.color-black {
+    color: black;
 }

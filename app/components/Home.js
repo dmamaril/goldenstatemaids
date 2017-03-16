@@ -14,7 +14,6 @@ import Dropdown             from './Dropdown';
 
 const styles = {
     bgImg: {
-        height: '80vh',
         paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
@@ -37,7 +36,7 @@ const styles = {
 
     quickform: {
         width: '80%',
-        margin: '50px auto 0'
+        margin: '50px auto'
     },
 
     submit: {
@@ -95,15 +94,17 @@ class Home extends React.Component {
 
                     <Header />
 
-                    <h1 style={ styles.jumboText }>We Clean. You Relax.</h1>
+                    <h1 className="color-white" style={ styles.jumboText }>We Clean. You Relax.</h1>
 
                     <div className="quick-form container" style={ styles.quickform }>
+
                         <Dropdown
                             class={ 'col-xs-6 col-sm-6 col-md-4' }
                             default={ this.props.beds.default }
                             options={ this.props.beds.options }
                             onSelect={ this.onSelect('bed') }
                         />
+
                         <Dropdown
                             class={ 'col-xs-6 col-sm-6 col-md-4' }
                             default={ this.props.baths.default }
@@ -125,8 +126,8 @@ class Home extends React.Component {
 
                 <div className="jumbotron text-center" style={ styles.jumbotron }>
 
-                    <h1 style={ { ...styles.jumboText, ...styles.noMargin } }> Ready for more "you" time? </h1>
-                    <h1 style={ { ...styles.jumboText, ...styles.noMargin } }> Sign up today. </h1>
+                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Ready for more "you" time? </h1>
+                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Sign up today. </h1>
 
                     <div className="quick-form container" style={ styles.quickform }>
                         <Dropdown

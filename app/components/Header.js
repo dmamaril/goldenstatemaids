@@ -1,22 +1,45 @@
-import React    from 'react';
-import { Link } from 'react-router';
-import logo_sm  from '../assets/logo/logo-04.png';
-import logo_lg  from '../assets/logo/logo-02.png';
+import React            from 'react';
+import { Link }         from 'react-router';
+import logo_white_sm    from '../assets/logo/logo-04.png';
+import logo_white_lg    from '../assets/logo/logo-02.png';
+import logo_blue_sm     from '../assets/logo/logo-03.png';
+import logo_blue_lg     from '../assets/logo/logo-01.png';
 
 const styles = {
+
     logo: {
         height: '50px'
     },
+
     navbar: {
         margin: '0',
         padding: '25px 10%',
         backgroundColor: 'transparent',
         borderColor: 'transparent'
     },
+
     link: {
         fontWeight: '400',
-        color: 'white',
         fontSize: '18px'
+    },
+
+    white: {
+        color: 'white'
+    },
+
+    blue: {
+        color: '#14374C'
+    }
+};
+
+const themes = {
+    blue: {
+        logo_lg: logo_blue_lg,
+        logo_sm: logo_blue_sm
+    },
+    white: {
+        logo_lg: logo_white_lg,
+        logo_sm: logo_white_sm
     }
 };
 
@@ -27,6 +50,10 @@ const styles = {
  * 
  */
 class HeaderContainer extends React.Component {
+
+    constructor (props) {
+        super(props);
+    }
 
 
     /**
@@ -41,6 +68,8 @@ class HeaderContainer extends React.Component {
         const   MEDIUM_DEVICE_WIDTH = 768;
         const   { innerWidth }      = window;
         let     { logo }            = this.state || {}; 
+
+        let { logo_sm, logo_lg } = themes[this.props.theme]
 
         if (innerWidth <= MEDIUM_DEVICE_WIDTH && logo !== logo_sm) {
 
@@ -88,7 +117,7 @@ class HeaderContainer extends React.Component {
                         <ul className="nav navbar-nav">
                             { /*<li><Link to="/login">Login<span className="sr-only">(current)</span></Link></li>
                             <li><Link to="/about">About</Link></li> */ }
-                            <li><Link to="/book" style={ styles.link }>Book Now</Link></li>
+                            <li><Link to="/book" style={ { ...styles.link, ...styles[this.props.theme] } }>Book Now</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -96,5 +125,9 @@ class HeaderContainer extends React.Component {
         );
     }
 };
+
+HeaderContainer.defaultProps = {
+    theme: 'white'
+}
 
 export default HeaderContainer;

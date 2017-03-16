@@ -1,7 +1,8 @@
 import React from 'react'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import Main from '../components/Main.js';
-import Home from '../components/Home.js';
+import Main from '../components/Main';
+import Home from '../components/Home';
+import Cleaning from '../components/Cleaning';
 import BookContainer from '../containers/BookContainer';
 
 export default (
@@ -9,6 +10,7 @@ export default (
         <Route path='/' component={ Main }>
             <IndexRoute component={ Home } />
             <Route path="book" component={ BookContainer } />
+            <Route path="cleaning" component={ Cleaning } />
         </Route>
     </Router>
 );

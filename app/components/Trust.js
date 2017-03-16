@@ -41,9 +41,9 @@ class Trust extends React.Component {
                     { this.props.steps.map(this.createTrust) }
                 </div>
 
-                { /* <Link to="/book" className="btn btn-lg btn-default push-down">
+                <Link to="/cleaning" className="btn btn-lg btn-default push-down">
                     LEARN MORE
-                </Link> */}
+                </Link>
             </div> 
         );
     }

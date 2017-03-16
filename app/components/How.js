@@ -1,31 +1,30 @@
 import React        from 'react';
 import { Link }     from 'react-router';
 
-import book_img     from '../assets/book_img.jpg';
-import clean_img    from '../assets/clean_img.jpg';
-import relax_img    from '../assets/relax_img.jpg';
+import line         from '../assets/line.svg';
+import calendar     from '../assets/calendar.svg';
+import bell         from '../assets/bell.svg';
+import duster       from '../assets/duster.svg';
+import hand         from '../assets/hand-cleaning.svg';
 
 const styles = {
 
-    container: {
-        width: '80%'
+    line: {
+        backgroundImage: `url(${line})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundPositionY: '10%'
     },
 
-    howPanel: {
-        marginBottom: '50px'
+    icon: {
+        height: '50px',
+        width: '50px',
+        backgroundColor: 'white'
     },
 
-    howImg: {
-    },
-
-    howIcon: {
-        fontSize: '50px',
-        color: '#3d77ea'
-        // color: '#FDB927'
-    },
-
-    h3: {
-        margin: '0'
+    steps: {
+        width: '90%',
+        margin: '50px auto'
     }
 };
 
@@ -35,32 +34,29 @@ class How extends React.Component {
         super(props);
     }
 
-    createStep ({ header, img, icon, text }, index) {
+    createStep ({ header, icon, text }, index) {
         return (
-            <div className="col-md-4 col-sm-12 push-down" key={ index }>
-                <img className="img-responsive push-down" src={ img } />
-
-                <div style={ styles.howIcon }>
-                    <span className={ icon }></span>
+            <div className="col-md-3 col-sm-12 text-left" key={ index }>
+                <div className="col-xs-2 col-md-12">
+                    <img src={ icon } style={ styles.icon } />
                 </div>
 
-                <h3 style={ styles.h3 }> { header } </h3>
-                <p> { text } </p>
+                <div className="col-xs-offset-1 col-xs-9 col-md-offset-0 col-md-12">
+                    <h4> <b>{ header }</b> </h4>
+                    <p> { text } </p>
+                </div>
             </div>
         )
     }
 
     render () {
         return (
-            <div className="container container-fluid text-center" style={ styles.container }>
-                <h1 className="black-header"> HOW GOLDEN STATE MAIDS WORKS </h1>
-                <div className="row">
-                    { this.props.steps.map(this.createStep) }
-                </div>
+            <div className="container container-fluid text-center"  style={ styles.line }>
+                <h3 className="black-header push-down"> Get your day back. It's easy. </h3>
 
-                <Link to="/book" className="btn btn-lg btn-primary push-down">
-                    BOOK APPOINTMENT
-                </Link>
+                <div className="row" style={ styles.steps }> { this.props.steps.map(this.createStep) } </div>
+
+                <Link to="/book" className="btn btn-lg btn-primary push-down"> BOOK APPOINTMENT </Link>
             </div> 
         );
     }
@@ -69,22 +65,24 @@ class How extends React.Component {
 How.defaultProps = {
     steps: [
         {
-            header  : 'book',
-            img     : book_img,
-            icon    : 'icon-calendar',
-            text    : 'Select the date and time you’d like your professional to show up.'
+            header  : 'Schedule us',
+            icon    : calendar,
+            text    : 'We\'re available every day of the week.'
         },
         {
-            header  : 'clean',
-            img     : clean_img,
-            icon    : 'icon-diamond',
-            text    : 'A certified cleaner comes over and cleans your place.'
+            header  : 'Let us in',
+            icon    : bell,
+            text    : 'Whether it\'s a doorman or a friend, all we need is the door unlocked.'
         },
         {
-            header  : 'relax',
-            img     : relax_img,
-            icon    : 'icon-sunglasses',
-            text    : 'Sit back and relax. Enjoy your sparkling home!'
+            header  : 'We clean',
+            icon    : duster,
+            text    : 'We rigorously cover our 50 point checklist. Add-ons available.'
+        },
+        {
+            header  : 'Rinse & repeat',
+            icon    : hand,
+            text    : 'Schedule recurring cleans to keep your place always looking fresh.'
         }
     ]
 };

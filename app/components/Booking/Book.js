@@ -77,7 +77,7 @@ class Book extends React.Component {
                     <Header />
 
                     <div style={ styles.mainContainer }>
-                        <h1 className="" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
+                        <h1 className="color-white" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>
 
                         { /* <div className="row" style={ styles.trustRow }>
                             { this.props.trust_elements.map(this.createTrust) }

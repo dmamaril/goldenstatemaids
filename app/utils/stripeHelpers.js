@@ -1,8 +1,6 @@
 import cfgs     from '../configs/stripe.js';
 import api_key  from '../configs/stripe';
 
-Stripe.setPublishableKey(cfgs.publishable);
-
 export async function chargeUser(email, { number, expiry, cvc }, amount) {
 
     cvc             = Number(cvc);
