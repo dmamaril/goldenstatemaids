@@ -1,5 +1,4 @@
 import React            from 'react';
-import CreditCardInfo   from './CreditCardInfo';
 import DateTimePicker   from './DateTimePicker';
 import Frequency        from './Frequency';
 import Extras           from './Extras';
@@ -71,8 +70,6 @@ export default (props) => {
             <Extras onChange={ props.onChange } />
 
             <DateTimePicker onChange={ props.onChange } />
-
-            <CreditCardInfo onChange={ props.onChange }/>
 
             <Frequency onChange={ props.onChange } freq={ props.freq }/>
 

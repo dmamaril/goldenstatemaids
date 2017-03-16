@@ -65,7 +65,7 @@ class BookContainer extends React.Component {
             delete booking.service_time;
 
             let result = await setBooking(booking);
-            let charge = await chargeUser(booking.email, stripe, total)
+            let charge = await chargeUser(booking.email, total);
 
         } catch (err) {
 
