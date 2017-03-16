@@ -115,8 +115,7 @@ class HeaderContainer extends React.Component {
 
                     <div className="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            { /*<li><Link to="/login">Login<span className="sr-only">(current)</span></Link></li>
-                            <li><Link to="/about">About</Link></li> */ }
+                            <li><Link to="/cleaning" style={ { ...styles.link, ...styles[this.props.theme] } }>Home Cleaning</Link></li>
                             <li><Link to="/book" style={ { ...styles.link, ...styles[this.props.theme] } }>Book Now</Link></li>
                         </ul>
                     </div>

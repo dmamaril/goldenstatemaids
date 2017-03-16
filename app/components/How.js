@@ -13,7 +13,7 @@ const styles = {
         backgroundImage: `url(${line})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        backgroundPositionY: '10%'
+        backgroundPositionY: '15%'
     },
 
     icon: {
