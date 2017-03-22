@@ -44,9 +44,11 @@ class Dropdown extends React.Component {
 
         super(props);
 
-        this.state          = { selection: props.default };
-        this.handleSelect   = this.handleSelect.bind(this);
-        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.state              = { selection: props.default };
+        this.handleSelect       = this.handleSelect.bind(this);
+        this.toggleDropdown     = this.toggleDropdown.bind(this);
+        this.handleMouseEnter   = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave   = this.handleMouseLeave.bind(this);
     }
 
     handleSelect ({ target }) {
@@ -61,6 +63,22 @@ class Dropdown extends React.Component {
 
     toggleDropdown () {
         this.setState({ isActive: !this.state.isActive })
+    }
+
+    handleMouseEnter () {
+
+        if (!this.state.isActive) {
+            this.setState({ isActive: true });
+        }
+
+    }
+
+    handleMouseLeave () {
+
+        if (this.state.isActive) {
+            this.setState({ isActive: false });
+        }
+
     }
 
     /**
@@ -102,7 +120,7 @@ class Dropdown extends React.Component {
         }
 
         return (
-            <div className={ "gsm-dropdown " + this.props.class } onClick={ this.toggleDropdown } style={ styles.container }>
+            <div className={ "gsm-dropdown " + this.props.class } onClick={ this.toggleDropdown } onMouseEnter={ this.handleMouseEnter } onMouseLeave={ this.handleMouseLeave } style={ styles.container }>
 
                 <a style={ { ...styles.option, ...style } }>
                     { this.state.selection.text }
