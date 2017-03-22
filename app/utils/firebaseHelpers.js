@@ -39,6 +39,9 @@ export async function setBooking (booking) {
 
 /**
  * [getTeams description]
+ *
+ *  Retrieve team keys for the sake of assigning bookings to a team
+ * 
  * @return {[type]} [description]
  */
 export async function getTeams () {
@@ -75,7 +78,7 @@ getTeams();
  */
 export async function getAvailability (date) {
 
-    let ref = firebase.database().ref(`bookings`);
+    let ref = firebase.database().ref(`booking`);
 
     const START_TIME    = 830;
     const START_TIMES   = [830, 1030, 1230, 1430, 1630];

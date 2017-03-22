@@ -11,7 +11,8 @@ const styles = {
     },
 
     logo: {
-        height: '50px'
+        height: '50px',
+        marginTop: '15px'
     },
 
     logoSm: {
@@ -36,15 +37,15 @@ export default (props) => (
                 </div>
                 
                 <div>
-                    <a>Facebook</a>
+                    <a href="https://www.facebook.com/goldenstatemaids">Facebook</a>
                 </div>
                 
                 <div>
-                    <a>Instagram</a>
+                    <a href="https://www.instagram.com/goldenstatemaids/">Instagram</a>
                 </div>
                 
                 <div>
-                    <a>Yelp</a>
+                    <a href="">Yelp</a>
                 </div>
             </div>
 
