@@ -5,7 +5,8 @@ import Footer from './Footer';
 const styles = {
 
     container: {
-        padding: '100px 20%'
+        padding: '100px 20%',
+        color: '#14374c'
     },
 
     about: {

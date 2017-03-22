@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import gsm_logo from '../assets/logo/logo-01.png'
 import gsm_logo_sm from '../assets/logo/logo-03.png'
 
@@ -29,7 +30,39 @@ export default (props) => (
 
         <div className="container text-left">
 
-            <div className="col-xs-6">
+            <div className="col-xs-3">
+                <h4> Get to know us </h4>
+
+                <div>
+                    <Link to="/about-us">About Us</Link>
+                </div>
+
+                <div>
+                    <Link to="/about-us">Contact Us</Link>
+                </div>
+
+                <div>
+                    <a href="mail:hello@goldenstatemaids.com" type="email">Careers</a>
+                </div>
+
+                <div>
+                    <a href="mail:hello@goldenstatemaids.com" type="email">Become A Cleaner</a>
+                </div>
+            </div>
+
+            <div className="col-xs-3">
+                <h4> How can we serve you? </h4>
+
+                <div>
+                    <Link to="/cleaning">Home Cleaning</Link>
+                </div>
+
+                <div>
+                    <Link to="/about-us">Contact Us</Link>
+                </div>
+            </div>
+
+            <div className="col-xs-3">
                 <h4> Connect </h4>
             
                 <div>
@@ -49,8 +82,8 @@ export default (props) => (
                 </div>
             </div>
 
-            <div className="col-xs-6 text-center">
-                <img src={ gsm_logo_sm } style={ styles.logoSm }/>
+            <div className="col-xs-3 text-center">
+                 <img src={ gsm_logo_sm } style={ styles.logoSm }/>
             </div>
         </div>
     </div>
