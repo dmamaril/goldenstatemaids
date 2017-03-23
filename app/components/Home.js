@@ -2,7 +2,7 @@ import React                from 'react';
 import { Link }             from 'react-router';
 import querystring          from 'querystring';
 import calcPriceTotal       from '../utils/calcPriceTotal'
-import bg_url               from '../assets/home.jpg';
+import bg_url               from '../assets/light.jpg';
 
 import How                  from './How';
 import Trust                from './Trust';
@@ -94,7 +94,7 @@ class Home extends React.Component {
 
                     <Header />
 
-                    <h1 className="color-white" style={ styles.jumboText }>We Clean. You Relax.</h1>
+                    <h1 style={ styles.jumboText }>We Clean. You Relax.</h1>
 
                     <div className="quick-form container" style={ styles.quickform }>
 

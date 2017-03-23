@@ -13,7 +13,12 @@ const styles = {
         backgroundImage: `url(${line})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        backgroundPositionY: '15%'
+        backgroundPositionY: '25%'
+    },
+
+    h3: {
+        marginBottom: '5%',
+        fontWeight: '400'
     },
 
     icon: {
@@ -23,7 +28,7 @@ const styles = {
     },
 
     steps: {
-        width: '90%',
+        width: '80%',
         margin: '50px auto'
     }
 };
@@ -42,7 +47,7 @@ class How extends React.Component {
                 </div>
 
                 <div className="col-xs-offset-1 col-xs-9 col-md-offset-0 col-md-12">
-                    <h4> <b>{ header }</b> </h4>
+                    <h3> <b>{ header }</b> </h3>
                     <p> { text } </p>
                 </div>
             </div>
@@ -52,7 +57,7 @@ class How extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center"  style={ styles.line }>
-                <h3 className="black-header push-down"> Get your day back. It's easy. </h3>
+                <h3 style={ styles.h3 }> Get your day back. It's easy. </h3>
 
                 <div className="row" style={ styles.steps }> { this.props.steps.map(this.createStep) } </div>
 
