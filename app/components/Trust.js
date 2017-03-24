@@ -9,7 +9,7 @@ const styles = {
     },
 
     icon: {
-        fontSize: '2em'
+        fontSize: '3em'
     }
 };
 
