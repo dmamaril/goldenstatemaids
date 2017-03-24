@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'IcoMoon---Ultimate';
-  src:  url('fonts/IcoMoon---Ultimate.eot?xkedu2');
-  src:  url('fonts/IcoMoon---Ultimate.eot?xkedu2#iefix') format('embedded-opentype'),
-    url('fonts/IcoMoon---Ultimate.ttf?xkedu2') format('truetype'),
-    url('fonts/IcoMoon---Ultimate.woff?xkedu2') format('woff'),
-    url('fonts/IcoMoon---Ultimate.svg?xkedu2#IcoMoon---Ultimate') format('svg');
+  src:  url('fonts/IcoMoon---Ultimate.eot?1qeqg1');
+  src:  url('fonts/IcoMoon---Ultimate.eot?1qeqg1#iefix') format('embedded-opentype'),
+    url('fonts/IcoMoon---Ultimate.ttf?1qeqg1') format('truetype'),
+    url('fonts/IcoMoon---Ultimate.woff?1qeqg1') format('woff'),
+    url('fonts/IcoMoon---Ultimate.svg?1qeqg1#IcoMoon---Ultimate') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,5 +80,14 @@
 }
 .icon-facebook:before {
   content: "\e49b";
+}
+.icon-twitter:before {
+  content: "\e49f";
+}
+.icon-yelp:before {
+  content: "\e4e0";
+}
+.icon-instagram:before {
+  content: "\ea92";
 }
 

@@ -7,28 +7,59 @@ import gsm_logo_sm from '../assets/logo/logo-03.png'
 const styles = {
 
     main: {
-        textAlign: 'center',
-        padding: '25px'
+        textAlign: 'left',
+        padding: '15px'
     },
 
     logo: {
         height: '50px',
-        marginTop: '15px'
+        marginLeft: '-17px'
     },
 
     links: {
         lineHeight: '25px'
+    },
+
+    h2: {
+        marginTop: '0px',
+        fontWeight: '700'
+    },
+
+    socials: {
+        fontSize: '36px',
+        paddingTop: '10px'
+    },
+
+    motto: {
+        padding: '1% 0'
     }
 }
 
 export default (props) => (
     <div className="container" style={ styles.main }>
 
-        <img src={ gsm_logo } style={ styles.logo } />
+        <div className="container">
+            
+            <div className="col-md-6 text-center">
+                <img src={ gsm_logo } style={ styles.logo } />
+            </div>
+
+            <div className="col-md-4" style={ styles.socials }>
+                <a href=""><span className="icon-facebook col-md-3"></span></a>
+                <a href=""><span className="icon-twitter col-md-3"></span></a>
+                <a href=""><span className="icon-instagram col-md-3"></span></a>
+                <a href=""><span className="icon-yelp col-md-3"></span></a>
+            </div>
+        </div>
 
         <hr/>
 
-        <div className="text-left col-md-offset-6" style={ styles.links }>
+        <div className="col-xs-12 col-md-6 text-center" style={ styles.motto }>
+            <h2 style={ styles.h2 }> Put your feet up. </h2>
+            <h2 style={ styles.h2 }> We got this. </h2>
+        </div>
+
+        <div className="col-md-6" style={ styles.links }>
 
             <div className="col-xs-4">
                 <h4> Get to know us </h4>
