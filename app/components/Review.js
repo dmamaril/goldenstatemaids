@@ -83,17 +83,17 @@ Review.defaultProps = {
         {
             img     : don_img,
             name    : 'don mamaril',
-            text    : 'MIB, you guys are amazing! I booked yesterday for a last minute cleaning today, Christmas Eve, and not only was I so thrilled to find that you had availability, the two cleaners who came to my house were rock stars! They did a seriously thorough and amazing job. What a relief!'
-        },
-        {
-            img     : tiana_img,
-            name    : 'tiana rae tran',
-            text    : 'I was out of town and friends needed to use my apartment the next day. Not only were you guys able to clean my apartment in a rush, you also sent me digital pictures of my apartment showing what a great job you did. Blown away by the customer service. You guys are the best!'
+            text    : 'I\'ve always hated cleaning. My place would never be clean for more than two days. I eventually gave up trying to clean my own place and gave cleaning services a shot. Tried a few maid cleaning services before settling on Golden State Maids. They\'re the best thing to have ever happened to my house!'
         },
         {
             img     : justin_img,
             name    : 'justin watkins',
-            text    : `You guys did such a great job, thanks so much. There was NO dog hair in sight and with two dogs and a long hair cat, that's a HUGE accomplishment. The floors are clean and the ceiling fans are beautiful! Thanks to Jessica and her team, for bravely entering my dirty house and doing such an amazing job!`
+            text    : 'Used to argue all the time with my roommates about keeping the house clean. Now we just split to have Golden State Maids come once a month and we\'re all happy.'
+        },
+        {
+            img     : tiana_img,
+            name    : 'tiana rae tran',
+            text    : 'A friend recommended Golden State Maids to me after I complimented her on how her apartment was always so clean. I do my own cleaning, but work gets tiring and things slowly get messy. Now I just hire GSM to come back once a month for a deep clean and my cleaners always do a fantastic job. My place has never looked better.'
         }
     ]
 };

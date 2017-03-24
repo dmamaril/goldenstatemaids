@@ -36,7 +36,7 @@ class Trust extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center" style={ styles.container }>
-                <h1 className="white-header"> YOUR TRUST AND SECURITY ARE OUR PRIORITY </h1>
+                <h1 className="white-header"> YOUR TRUST AND SECURITY ARE OUR PRIORITIES </h1>
                 <div className="row">
                     { this.props.steps.map(this.createTrust) }
                 </div>
@@ -59,12 +59,12 @@ Trust.defaultProps = {
         {
             header  : 'safety first',
             icon    : 'icon-shield',
-            text    : 'We rigorously vet all of our Cleaners, who undergo identity checks as well as in-person interviews.'
+            text    : 'We rigorously vet all of our Cleaners before they\'re allowed to enter your home. Background checks and in-person interviews are standard.'
         },
         {
-            header  : 'only the best quality',
+            header  : 'only the best',
             icon    : 'icon-certificate',
-            text    : 'Our skilled professionals go above and beyond on every job. Cleaners are rated and reviewed after each task.'
+            text    : 'Our skilled professionals go above and beyond on every job. Cleaners are reviewed and rated after every cleaning.'
         },
         {
             header  : 'easy to get help',
@@ -74,12 +74,12 @@ Trust.defaultProps = {
         {
             header  : 'seamless communication',
             icon    : 'icon-bubbles',
-            text    : 'Online communication makes it easy for you to stay in touch with your Cleaners.'
+            text    : 'Online communication makes it easy for you to stay in touch with your Cleaners. Get a notification when your Cleaners are on their way'
         },
         {
             header  : 'cash-free payment',
             icon    : 'icon-credit',
-            text    : 'Pay securely online only when the cleaning is complete.'
+            text    : 'Pay securely online after the cleaning is complete.'
         }
     ]
 };

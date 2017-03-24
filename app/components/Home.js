@@ -27,7 +27,7 @@ const styles = {
     },
 
     jumboText: {
-        marginTop: '75px'
+        marginTop: '5%'
     },
 
     dropdown: {
@@ -37,6 +37,10 @@ const styles = {
     quickform: {
         width: '80%',
         margin: '50px auto'
+    },
+
+    quickformPushDown: {
+        marginBottom: '10%'
     },
 
     submit: {
@@ -52,6 +56,10 @@ const styles = {
         backgroundColor: '#FDB927',
         border: '1px solid #FDB927',
         color: 'black'
+    },
+
+    fontWeight400: {
+        fontWeight: '400'
     }
 };
 
@@ -92,11 +100,12 @@ class Home extends React.Component {
             <div>
                 <div className="jumbotron text-center" style={ styles.bgImg }>
 
-                    <Header />
+                    <Header theme="blue"/>
 
-                    <h1 style={ styles.jumboText }>We Clean. You Relax.</h1>
+                    <h1 style={ styles.jumboText }> Go ahead & relax. </h1>
+                    <h1> We'll clean.</h1>
 
-                    <div className="quick-form container" style={ styles.quickform }>
+                    <div className="quick-form container" style={ { ...styles.quickform, ...styles.quickformPushDown } }>
 
                         <Dropdown
                             class={ 'col-xs-6 col-sm-6 col-md-4' }
@@ -126,8 +135,8 @@ class Home extends React.Component {
 
                 <div className="jumbotron text-center" style={ styles.jumbotron }>
 
-                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Ready for more "you" time? </h1>
-                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Sign up today. </h1>
+                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Ready for more <span style={ styles.fontWeight400 }>you</span> time? </h1>
+                    <h1 className="color-white" style={ { ...styles.jumboText, ...styles.noMargin } }> Sign up today! </h1>
 
                     <div className="quick-form container" style={ styles.quickform }>
                         <Dropdown

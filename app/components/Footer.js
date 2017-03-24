@@ -16,21 +16,21 @@ const styles = {
         marginTop: '15px'
     },
 
-    logoSm: {
-        height: '125px'
+    links: {
+        lineHeight: '25px'
     }
 }
 
 export default (props) => (
-    <div clasName="footer" style={ styles.main }>
+    <div className="container" style={ styles.main }>
 
         <img src={ gsm_logo } style={ styles.logo } />
 
         <hr/>
 
-        <div className="container text-left">
+        <div className="text-left col-md-offset-6" style={ styles.links }>
 
-            <div className="col-xs-3">
+            <div className="col-xs-4">
                 <h4> Get to know us </h4>
 
                 <div>
@@ -50,7 +50,7 @@ export default (props) => (
                 </div>
             </div>
 
-            <div className="col-xs-3">
+            <div className="col-xs-4">
                 <h4> How can we serve you? </h4>
 
                 <div>
@@ -62,7 +62,7 @@ export default (props) => (
                 </div>
             </div>
 
-            <div className="col-xs-3">
+            <div className="col-xs-4">
                 <h4> Connect </h4>
             
                 <div>
@@ -80,10 +80,6 @@ export default (props) => (
                 <div>
                     <a href="">Yelp</a>
                 </div>
-            </div>
-
-            <div className="col-xs-3 text-center">
-                 <img src={ gsm_logo_sm } style={ styles.logoSm }/>
             </div>
         </div>
     </div>
