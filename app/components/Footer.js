@@ -38,9 +38,9 @@ const styles = {
 export default (props) => (
     <div className="container col-md-12" style={ styles.main }>
 
-        <div className="container">
+        <div className="container text-center">
             
-            <div className="col-md-6 text-center">
+            <div className="col-md-6">
                 <img src={ gsm_logo } style={ styles.logo } />
             </div>
 
@@ -52,68 +52,70 @@ export default (props) => (
             </div>
         </div>
 
-        <hr/>
+        <hr style={ styles.hr } />
 
-        <div className="col-xs-12 col-md-6 text-center" style={ styles.motto }>
-            <h2 style={ styles.h2 }> Put your feet up. </h2>
-            <h2 style={ styles.h2 }> We got this. </h2>
-        </div>
-
-        <div className="col-md-6" style={ styles.links }>
-
-            <div className="col-xs-4">
-                <h4> Get to know us </h4>
-
-                <div>
-                    <Link to="/about-us">About Us</Link>
-                </div>
-
-                <div>
-                    <Link to="/about-us#contact-us">Contact Us</Link>
-                </div>
-
-                <div>
-                    <a href="mail:hello@goldenstatemaids.com" type="email">Careers</a>
-                </div>
-
-                <div>
-                    <a href="mail:hello@goldenstatemaids.com" type="email">Become A Cleaner</a>
-                </div>
+        <div className="container">
+            <div className="col-xs-12 col-md-6 text-center" style={ styles.motto }>
+                <h2 style={ styles.h2 }> Put your feet up. </h2>
+                <h2 style={ styles.h2 }> We got this. </h2>
             </div>
 
-            <div className="col-xs-4">
-                <h4> How can we serve you? </h4>
+            <div className="col-md-6" style={ styles.links }>
 
-                <div>
-                    <Link to="/cleaning">Home Cleaning</Link>
+                <div className="col-xs-4">
+                    <h4> Get to know us </h4>
+
+                    <div>
+                        <Link to="/about-us">About Us</Link>
+                    </div>
+
+                    <div>
+                        <Link to="/about-us#contact-us">Contact Us</Link>
+                    </div>
+
+                    <div>
+                        <a href="mail:hello@goldenstatemaids.com" type="email">Careers</a>
+                    </div>
+
+                    <div>
+                        <a href="mail:hello@goldenstatemaids.com" type="email">Become A Cleaner</a>
+                    </div>
                 </div>
 
-                <div>
-                    <Link to="/cleaning#checklist">Our 50pt Checklist</Link>
+                <div className="col-xs-4">
+                    <h4> How can we serve you? </h4>
+
+                    <div>
+                        <Link to="/cleaning">Home Cleaning</Link>
+                    </div>
+
+                    <div>
+                        <Link to="/cleaning#checklist">Our 50pt Checklist</Link>
+                    </div>
+
+                    <div>
+                        <Link to="/about-us">Contact Us</Link>
+                    </div>
                 </div>
 
-                <div>
-                    <Link to="/about-us">Contact Us</Link>
-                </div>
-            </div>
+                <div className="col-xs-4">
+                    <h4> Connect </h4>
+                    
+                    <div>
+                        <a href="https://www.facebook.com/goldenstatemaids">Facebook</a>
+                    </div>
 
-            <div className="col-xs-4">
-                <h4> Connect </h4>
-                
-                <div>
-                    <a href="https://www.facebook.com/goldenstatemaids">Facebook</a>
-                </div>
-
-                <div>
-                    <a href="https://twitter.com/goldenstatemaid">Twitter</a>
-                </div>
-                
-                <div>
-                    <a href="https://www.instagram.com/goldenstatemaids">Instagram</a>
-                </div>
-                
-                <div>
-                    <a href="">Yelp</a>
+                    <div>
+                        <a href="https://twitter.com/goldenstatemaid">Twitter</a>
+                    </div>
+                    
+                    <div>
+                        <a href="https://www.instagram.com/goldenstatemaids">Instagram</a>
+                    </div>
+                    
+                    <div>
+                        <a href="">Yelp</a>
+                    </div>
                 </div>
             </div>
         </div>

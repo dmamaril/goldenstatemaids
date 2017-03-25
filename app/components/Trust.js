@@ -89,7 +89,7 @@ Trust.defaultProps = {
         {
             header  : 'cash-free payment',
             icon    : 'icon-credit',
-            text    : 'Pay securely online after the cleaning is complete.'
+            text    : 'Pay securely online after you\'re satisfied and the cleaning is complete. Backed by our 100% guarrantee.'
         }
     ]
 };
