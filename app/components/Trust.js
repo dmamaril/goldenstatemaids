@@ -64,12 +64,12 @@ Trust.defaultProps = {
         {
             header  : 'saves you time',
             icon    : 'icon-history',
-            text    : 'Golden State Maids helps you live smarter, giving you time to focus on what’s most important.'
+            text    : `Cleaning isn't fun, but we like it. Golden State Maids gives you your day back.`
         },
         {
             header  : 'safety first',
             icon    : 'icon-shield',
-            text    : 'We rigorously vet all of our Cleaners before they\'re allowed to enter your home. Background checks and in-person interviews are standard.'
+            text    : `All our Cleaners undergo background checks, in-person interviews, and training before ever entering your home.`
         },
         {
             header  : 'only the best',
@@ -79,7 +79,7 @@ Trust.defaultProps = {
         {
             header  : 'easy to get help',
             icon    : 'icon-phone',
-            text    : 'We bring our own safe supplies. Let us know of any special requests and we’ll make it happen.'
+            text    : 'We bring our own safe supplies. Special requests? Let us know!'
         },
         {
             header  : 'seamless communication',

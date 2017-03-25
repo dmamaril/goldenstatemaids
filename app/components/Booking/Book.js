@@ -3,6 +3,8 @@ import { Link }         from 'react-router';
 import BookingForm      from './BookingForm';
 import background       from '../../assets/book.jpg';
 import Header           from '../Header';
+import Footer           from '../Footer';
+import Review           from '../Review';
 
 const styles = {
 
@@ -107,6 +109,8 @@ class Book extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
         );
     }

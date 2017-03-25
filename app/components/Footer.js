@@ -74,11 +74,7 @@ export default (props) => (
                     </div>
 
                     <div>
-                        <a href="mail:hello@goldenstatemaids.com" type="email">Careers</a>
-                    </div>
-
-                    <div>
-                        <a href="mail:hello@goldenstatemaids.com" type="email">Become A Cleaner</a>
+                        <a href="mail:hello@goldenstatemaids.com" type="email">Clean With Us</a>
                     </div>
                 </div>
 
@@ -90,11 +86,7 @@ export default (props) => (
                     </div>
 
                     <div>
-                        <Link to="/cleaning#checklist">Our 50pt Checklist</Link>
-                    </div>
-
-                    <div>
-                        <Link to="/about-us">Contact Us</Link>
+                        <Link to="/cleaning#checklist">50pt Checklist</Link>
                     </div>
                 </div>
 

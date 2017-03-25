@@ -74,7 +74,7 @@ How.defaultProps = {
         {
             header  : 'Book us',
             icon    : calendar,
-            text    : 'We\'re available every day of the week.'
+            text    : 'We\'re available to clean every day of the week.'
         },
         {
             header  : 'Let us in',
@@ -84,12 +84,12 @@ How.defaultProps = {
         {
             header  : 'We clean',
             icon    : duster,
-            text    : 'We rigorously cover our 50 point checklist. Add-ons available.'
+            text    : `Our maids are trained to rigorously cover our 50 point checklist. Add-ons available.`
         },
         {
             header  : 'Rinse & repeat',
             icon    : hand,
-            text    : 'Schedule recurring cleans to keep your place always looking fresh.'
+            text    : 'Schedule recurring cleans with Golden State Maids to keep your place always looking fresh.'
         }
     ]
 };
