@@ -13,13 +13,14 @@ const styles = {
         backgroundImage: `url(${line})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        backgroundPositionY: '25%'
+        backgroundPositionY: '25%',
+        margin: '50px auto'
     },
 
     h1: {
         width: '80%',
         fontWeight: '700',
-        margin: '0 auto 5%'
+        margin: '0 auto 50px'
     },
 
     icon: {
@@ -62,7 +63,7 @@ class How extends React.Component {
 
                 <div className="row" style={ styles.steps }> { this.props.steps.map(this.createStep) } </div>
 
-                <Link to="/book" className="btn btn-lg btn-primary push-down"> BOOK APPOINTMENT </Link>
+                <Link to="/book" className="btn btn-lg btn-primary"> BOOK APPOINTMENT </Link>
             </div> 
         );
     }

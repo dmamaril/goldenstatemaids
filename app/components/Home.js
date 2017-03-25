@@ -13,7 +13,9 @@ import Dropdown             from './Dropdown';
 
 
 const styles = {
-    bgImg: {
+
+    mainContainer: {
+        margin: '0',
         paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
@@ -98,7 +100,7 @@ class Home extends React.Component {
     render () {
         return (
             <div>
-                <div className="jumbotron text-center" style={ styles.bgImg }>
+                <div className="jumbotron text-center" style={ styles.mainContainer }>
 
                     <Header theme="blue"/>
 
