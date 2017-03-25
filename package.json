@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "prod": "webpack -p",
     "webpack": "./node_modules/.bin/webpack",
-    "publish": "npm run webpack && firebase deploy"
+    "publish": "git push origin master && npm run webpack && firebase deploy"
   },
   "repository": {
     "type": "git",
