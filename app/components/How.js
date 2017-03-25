@@ -9,7 +9,7 @@ import hand         from '../assets/hand-cleaning.svg';
 
 const styles = {
 
-    line: {
+    container: {
         backgroundImage: `url(${line})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
@@ -17,8 +17,9 @@ const styles = {
     },
 
     h1: {
-        marginBottom: '5%',
-        fontWeight: '700'
+        width: '80%',
+        fontWeight: '700',
+        margin: '0 auto 5%'
     },
 
     icon: {
@@ -56,7 +57,7 @@ class How extends React.Component {
 
     render () {
         return (
-            <div className="container container-fluid text-center"  style={ styles.line }>
+            <div className="container text-center"  style={ styles.container }>
                 <h1 style={ styles.h1 }> Less cleaning, more Netflix. </h1>
 
                 <div className="row" style={ styles.steps }> { this.props.steps.map(this.createStep) } </div>

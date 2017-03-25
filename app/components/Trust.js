@@ -3,7 +3,9 @@ import { Link }     from 'react-router';
 
 const styles = {
     container: {
-        paddingTop: '50px',
+        padding: '0',
+        width: '80%',
+        borderTop: '1px solid rgba(0, 0, 0 , 0.5)'
     },
 
     icon: {
@@ -12,8 +14,12 @@ const styles = {
     },
 
     header: {
-        marginBottom: '50px',
+        margin: '50px auto',
         fontWeight: '700'
+    },
+
+    padBottom: {
+        paddingBottom: '50px'
     }
 };
 
@@ -25,7 +31,7 @@ class Trust extends React.Component {
 
     createTrust ({ header, icon, text }, index) {
         return (
-            <div className="col-md-4 col-sm-12 push-down" key={ index }>
+            <div className="col-md-4 col-sm-12" key={ index } style={ styles.padBottom }>
 
                 <div style={ styles.icon }>
                     <span className={ icon }></span>
@@ -39,20 +45,15 @@ class Trust extends React.Component {
 
     render () {
         return (
-            <div className="container text-center">
-
-                <hr/>
-
-                <div className="container">
-                    <h1 style={ styles.header } > We've got your back. </h1>
-                    <div className="row">
-                        { this.props.steps.map(this.createTrust) }
-                    </div>
-
-                    <Link to="/cleaning" className="btn btn-lg btn-primary push-down">
-                        LEARN MORE
-                    </Link>
+            <div className="container text-center" style={ styles.container }>
+                <h1 style={ styles.header } > We've got your back. </h1>
+                <div className="row is-flex">
+                    { this.props.steps.map(this.createTrust) }
                 </div>
+
+                <Link to="/cleaning" className="btn btn-lg btn-primary push-down">
+                    LEARN MORE
+                </Link>
             </div> 
         );
     }
