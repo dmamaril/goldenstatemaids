@@ -9,15 +9,8 @@ import justin_img   from '../assets/justin.jpg';
 const styles = {
 
     container: {
-
         padding: '50px',
-
         backgroundImage: `url(${ bg })`,
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        WebkitBackgroundSize: 'cover'
     },
 
     reviews: {
@@ -65,7 +58,7 @@ class Review extends React.Component {
 
     render () {
         return (
-            <div className="container container-fluid text-center" style={ styles.container }>
+            <div className="container text-center parallax" style={ styles.container }>
                 
                 <h1 className="white-header" style={ styles.header }>
                     <span className="icon-facebook"></span> HAPPY CUSTOMERS
