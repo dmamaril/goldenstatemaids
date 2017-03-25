@@ -4,12 +4,16 @@ import { Link }     from 'react-router';
 const styles = {
     container: {
         paddingTop: '50px',
-        backgroundColor: '#3d77ea',
-        color: 'white !important'
     },
 
     icon: {
-        fontSize: '3em'
+        fontSize: '3em',
+        color: '#3d77ea'
+    },
+
+    header: {
+        marginBottom: '50px',
+        fontWeight: '700'
     }
 };
 
@@ -27,7 +31,7 @@ class Trust extends React.Component {
                     <span className={ icon }></span>
                 </div>
 
-                <h3> { header } </h3>
+                <h3> <b>{ header }</b> </h3>
                 <p> { text } </p>
             </div>
         )
@@ -35,15 +39,20 @@ class Trust extends React.Component {
 
     render () {
         return (
-            <div className="container container-fluid text-center" style={ styles.container }>
-                <h1 className="white-header"> YOUR TRUST AND SECURITY ARE OUR PRIORITIES </h1>
-                <div className="row">
-                    { this.props.steps.map(this.createTrust) }
-                </div>
+            <div className="container text-center">
 
-                <Link to="/cleaning" className="btn btn-lg btn-default push-down">
-                    LEARN MORE
-                </Link>
+                <hr/>
+
+                <div className="container">
+                    <h1 style={ styles.header } > We've got your back. </h1>
+                    <div className="row">
+                        { this.props.steps.map(this.createTrust) }
+                    </div>
+
+                    <Link to="/cleaning" className="btn btn-lg btn-primary push-down">
+                        LEARN MORE
+                    </Link>
+                </div>
             </div> 
         );
     }

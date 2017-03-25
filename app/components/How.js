@@ -16,9 +16,9 @@ const styles = {
         backgroundPositionY: '25%'
     },
 
-    h3: {
+    h1: {
         marginBottom: '5%',
-        fontWeight: '400'
+        fontWeight: '700'
     },
 
     icon: {
@@ -57,7 +57,7 @@ class How extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center"  style={ styles.line }>
-                <h3 style={ styles.h3 }> <b>Less cleaning, more Netflix.</b> </h3>
+                <h1 style={ styles.h1 }> Less cleaning, more Netflix. </h1>
 
                 <div className="row" style={ styles.steps }> { this.props.steps.map(this.createStep) } </div>
 
