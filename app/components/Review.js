@@ -9,33 +9,37 @@ import justin_img   from '../assets/justin.jpg';
 const styles = {
 
     container: {
+
+        padding: '50px',
+
         backgroundImage: `url(${ bg })`,
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        // backgroundSize: 'cover',
-        // WebkitBackgroundSize: 'cover'
+        backgroundSize: 'cover',
+        WebkitBackgroundSize: 'cover'
     },
 
     reviews: {
-        background: 'rgba(255, 255, 255, 0.8)',
         padding: '10px',
-        borderRadius: '10px'
+        margin: '10px',
+        borderRadius: '10px',
+        background: 'rgba(255, 255, 255, 0.8)',
     },
 
     img: {
         height: '100px'
     },
 
-    center: {
-        margin: '0 auto',
+    header: {
+        margin: '0 auto 50px'
     },
 
-    flex: {
-        display: 'flex',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap'
-    }
+    flexContainer: {
+        margin: '0 auto 40px',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
 };
 
 class Review extends React.Component {
@@ -46,7 +50,7 @@ class Review extends React.Component {
 
     createStep ({ name, img, text }, index) {
         return (
-            <div className="col-md-3 col-sm-12 push-down" key={ index } style={ styles.reviews }>
+            <div className="col-md-3 col-sm-12" key={ index } style={ styles.reviews }>
                 <div>
                     <img className="img-circle" style={ styles.img } src={ img } />
                     <h4 className="text-capitalize"> { name } </h4>
@@ -62,15 +66,16 @@ class Review extends React.Component {
     render () {
         return (
             <div className="container container-fluid text-center" style={ styles.container }>
-                <h1 className="white-header"> <span className="icon-facebook"></span> HAPPY CUSTOMERS </h1>
                 
-                <div className="container">
-                    <div className="row" style={ styles.flex }>
-                        { this.props.steps.map(this.createStep) }
-                    </div>
+                <h1 className="white-header" style={ styles.header }>
+                    <span className="icon-facebook"></span> HAPPY CUSTOMERS
+                </h1>
+                
+                <div className="row is-flex" style={ styles.flexContainer }>
+                    { this.props.steps.map(this.createStep) }
                 </div>
 
-                <Link to="/book" type="submit" className="btn btn-lg btn-default push-down">
+                <Link to="/book" type="submit" className="btn btn-lg btn-default">
                     BOOK NOW
                 </Link>
             </div> 
