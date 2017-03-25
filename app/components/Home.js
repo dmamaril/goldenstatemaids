@@ -2,7 +2,7 @@ import React                from 'react';
 import { Link }             from 'react-router';
 import querystring          from 'querystring';
 import calcPriceTotal       from '../utils/calcPriceTotal'
-import bg_url               from '../assets/light.jpg';
+import bg_url               from '../assets/light.png';
 
 import How                  from './How';
 import Trust                from './Trust';

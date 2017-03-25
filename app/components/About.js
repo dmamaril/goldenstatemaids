@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -55,6 +56,22 @@ class About extends React.Component {
         this.state = {};
     }
 
+
+    componentDidUpdate() {
+
+        let hash = this.props.location.hash.replace('#', '');
+
+        if (hash) {
+
+            let node = ReactDOM.findDOMNode(this.refs[hash]);
+
+            if (node) {
+                node.scrollIntoView();
+            }
+        }
+    }
+
+
     render () {
         return (
             <div>
@@ -74,13 +91,13 @@ class About extends React.Component {
                     </p>
                 </div>
 
-                <div className="container col-md-offset-3 col-sm-12" style={ { ...styles.contact, ...styles.container } }>
+                <div className="container col-md-offset-3 col-sm-12" style={ { ...styles.contact, ...styles.container } } ref="contact-us">
                     <h1 style={ styles.h1 }> Contact Us </h1>
 
                     <div style={ styles.padBottom }>
                         <p>
                             <span className="icon-phone" style={ styles.icon }></span>
-                            <a style={ styles.links } onMouseEnter={ this.handleMouseEnter } onMouseLeave={ this.onMouseLeave } href="tel:(800) 123-4567" title="phone"> (800) 123-4567 </a>
+                            <a style={ styles.links } onMouseEnter={ this.handleMouseEnter } onMouseLeave={ this.onMouseLeave } href="tel:(408) 831-1531" title="phone"> (408) 831-1531 </a>
                         </p>
                         <p>
                             <span className="icon-envelope" style={ styles.icon }></span>

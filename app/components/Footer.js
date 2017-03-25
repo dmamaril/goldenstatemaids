@@ -36,7 +36,7 @@ const styles = {
 }
 
 export default (props) => (
-    <div className="container" style={ styles.main }>
+    <div className="container col-md-12" style={ styles.main }>
 
         <div className="container">
             
@@ -45,9 +45,9 @@ export default (props) => (
             </div>
 
             <div className="col-md-4" style={ styles.socials }>
-                <a href=""><span className="icon-facebook col-md-3"></span></a>
-                <a href=""><span className="icon-twitter col-md-3"></span></a>
-                <a href=""><span className="icon-instagram col-md-3"></span></a>
+                <a href="https://www.facebook.com/goldenstatemaids"><span className="icon-facebook col-md-3"></span></a>
+                <a href="https://twitter.com/goldenstatemaid"><span className="icon-twitter col-md-3"></span></a>
+                <a href="https://www.instagram.com/goldenstatemaids"><span className="icon-instagram col-md-3"></span></a>
                 <a href=""><span className="icon-yelp col-md-3"></span></a>
             </div>
         </div>
@@ -69,7 +69,7 @@ export default (props) => (
                 </div>
 
                 <div>
-                    <Link to="/about-us">Contact Us</Link>
+                    <Link to="/about-us#contact-us">Contact Us</Link>
                 </div>
 
                 <div>
@@ -89,23 +89,27 @@ export default (props) => (
                 </div>
 
                 <div>
+                    <Link to="/cleaning#checklist">Our 50pt Checklist</Link>
+                </div>
+
+                <div>
                     <Link to="/about-us">Contact Us</Link>
                 </div>
             </div>
 
             <div className="col-xs-4">
                 <h4> Connect </h4>
-            
-                <div>
-                    <a>Twitter</a>
-                </div>
                 
                 <div>
                     <a href="https://www.facebook.com/goldenstatemaids">Facebook</a>
                 </div>
+
+                <div>
+                    <a href="https://twitter.com/goldenstatemaid">Twitter</a>
+                </div>
                 
                 <div>
-                    <a href="https://www.instagram.com/goldenstatemaids/">Instagram</a>
+                    <a href="https://www.instagram.com/goldenstatemaids">Instagram</a>
                 </div>
                 
                 <div>

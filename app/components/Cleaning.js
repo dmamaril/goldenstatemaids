@@ -1,5 +1,7 @@
 import React        from 'react';
 import { Link }     from 'react-router';
+import ReactDOM     from 'react-dom'
+
 import Header       from './Header';
 import bg_img       from '../assets/cleaning.jpg';
 import checklist    from '../configs/checklist';
@@ -13,23 +15,28 @@ import Footer       from './Footer';
 
 const styles = {
     bgImg: {
-        minHeight: '550px',
         paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
         background: `url(${ bg_img }) no-repeat center center`,
-        marginBottom: '0'
+        paddingBottom: '50px'
+    },
+
+    content: {
+        padding: '5% 0'
     },
 
     h: {
         color: '#14374C',
         fontWeight: '700',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        fontSize: '4em',
+        marginTop: '0'
     },
 
     details: {
         backgroundColor: '#14374c',
-        minHeight: '40vh'
+        padding: '10% 50px'
     },
 
     detailItemsContainer: {
@@ -68,7 +75,7 @@ const styles = {
     },
 
     containerLvl0: {
-        backgroundColor: '#f8fcf2'
+        backgroundColor: '#ffffff'
     },
 
     containerLvl1: {
@@ -92,7 +99,7 @@ const styles = {
     },
 
     meta: {
-        fontSize: '20px',
+        fontSize: '16px',
         marginLeft: '20px',
         fontWeight: '100'
     },
@@ -103,12 +110,15 @@ const styles = {
     },
 
     pad: {
-        paddingTop: '50px',
-        paddingBottom: '50px'
+        padding: '50px'
     },
 
     padBottom: {
-        paddingBottom: '5px'
+        paddingBottom: '15px'
+    },
+
+    noMargin: {
+        margin: '0'
     }
 };
 
@@ -125,10 +135,23 @@ class Cleaning extends React.Component {
         this.createChecklist    = this.createChecklist.bind(this);
     }
 
+    componentDidUpdate() {
+
+        let hash = this.props.location.hash.replace('#', '');
+
+        if (hash) {
+
+            let node = ReactDOM.findDOMNode(this.refs[hash]);
+
+            if (node) {
+                node.scrollIntoView();
+            }
+        }
+    }
+
 
     updateLevel (level) {
         return () => {
-            console.log(level);
             this.setState({ level });
         };
     }
@@ -175,11 +198,11 @@ class Cleaning extends React.Component {
         return (
             <div>
 
-                <div className="jumbotron" style={ styles.bgImg }>
+                <div className="container" style={ styles.bgImg }>
                     <Header theme="blue"/>
 
-                    <div className="col-sm-offset-1 col-xs-12 col-sm-5 col-md-4">
-                        <h2 style={ styles.h }> Let your home shine. </h2>
+                    <div className="col-sm-offset-1 col-xs-12 col-md-5" style={ styles.content }>
+                        <h1 style={ styles.h }> Let your home shine. </h1>
 
                         <p style={ styles.p }>
                             We understand your home is important to you.
@@ -202,9 +225,9 @@ class Cleaning extends React.Component {
                 </div>
 
 
-                <div className="container" style={ { ...styles['containerLvl' + lvl], ...styles.pad } }>
+                <div className="container" style={ { ...styles['containerLvl' + lvl], ...styles.pad } } ref="checklist">
 
-                    <h2 className={ (this.state.level === 2 ? 'color-white' : '') + " text-center" }> Our 50pt checklist </h2>
+                    <h2 className={ (this.state.level === 2 ? 'color-white' : '') + " text-center" } style={ styles.noMargin }> Our 50pt checklist </h2>
 
                     <div className="container col-sm-offset-1 col-md-10">
                         <h1 className="col-xs-12 col-sm-3" onClick={ this.updateLevel(0) } style={ Object.assign({}, styles.options, lvl !== 0 && styles.fade) }> Standard </h1>
@@ -222,7 +245,7 @@ class Cleaning extends React.Component {
                 </div>
 
 
-                <div className="container" style={ { ...styles.details, ...styles.pad } }>
+                <div className="container" style={ styles.details }>
 
                     <div className="col-sm-12 col-md-6">
                         <h1 style= { { ...styles.h, ...styles.light } }> We sweat the details </h1>

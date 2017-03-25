@@ -13,8 +13,8 @@ const styles = {
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        WebkitBackgroundSize: 'cover'
+        // backgroundSize: 'cover',
+        // WebkitBackgroundSize: 'cover'
     },
 
     reviews: {
