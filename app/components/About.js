@@ -75,7 +75,7 @@ class About extends React.Component {
     render () {
         return (
             <div>
-                <Header theme="blue"/>
+                <Header/>
 
                 <div className="container col-md-offset-3 col-sm-12" style={ { ...styles.about, ...styles.container } }>
                     <h1 style={ styles.h1 }> About Us </h1>

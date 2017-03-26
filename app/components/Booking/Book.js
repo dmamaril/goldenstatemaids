@@ -9,7 +9,7 @@ import Review           from '../Review';
 const styles = {
 
     bgImg: {
-        height: '80vh',
+        height: '70vh',
         paddingTop: '0',
         backgroundSize: 'cover',
         WebkitBackgroundSize: 'cover',
@@ -76,7 +76,7 @@ class Book extends React.Component {
             <div>
                 <div className="jumbotron text-center" style={ styles.bgImg }>
 
-                    <Header />
+                    <Header theme='white'/>
 
                     <div style={ styles.mainContainer }>
                         <h1 className="color-white" style={ styles.header }> YOU'RE 60 SECONDS AWAY FROM AWESOME CLEANING </h1>

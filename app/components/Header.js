@@ -13,14 +13,9 @@ const styles = {
 
     navbar: {
         margin: '0',
-        padding: '25px 10%',
+        padding: '25px 5%',
         backgroundColor: 'transparent',
         borderColor: 'transparent'
-    },
-
-    link: {
-        fontWeight: '400',
-        fontSize: '18px'
     },
 
     white: {
@@ -29,6 +24,25 @@ const styles = {
 
     blue: {
         color: '#14374C'
+    },
+
+    bookBtn: {
+        color: '#3d77ea',
+        margin: '5px 0',
+        borderRadius: '14px',
+        padding: '10px 20px',
+        border: '1px solid #3d77ea',
+    },
+
+    links: {
+        padding: '0',
+        margin: '15px',
+        fontWeight: '400',
+        fontSize: '14px'
+    },
+
+    noPad: {
+        padding: '0'
     }
 };
 
@@ -53,6 +67,9 @@ class HeaderContainer extends React.Component {
 
     constructor (props) {
         super(props);
+
+        this.state = { toggled: 0 };
+        this.toggleBookBtnStyle = this.toggleBookBtnStyle.bind(this);
     }
 
 
@@ -67,9 +84,9 @@ class HeaderContainer extends React.Component {
 
         const   MEDIUM_DEVICE_WIDTH = 768;
         const   { innerWidth }      = window;
-        let     { logo }            = this.state || {}; 
+        let     { logo }            = this.state || {};
 
-        let { logo_sm, logo_lg } = themes[this.props.theme]
+        let { logo_sm, logo_lg } = themes[this.props.theme];
 
         if (innerWidth <= MEDIUM_DEVICE_WIDTH && logo !== logo_sm) {
 
@@ -80,6 +97,10 @@ class HeaderContainer extends React.Component {
             this.setState({ logo: logo_lg });
 
         }
+    }
+
+    toggleBookBtnStyle (toggled) {
+        return () => this.setState({ toggled });
     }
 
     componentWillMount () {
@@ -96,11 +117,19 @@ class HeaderContainer extends React.Component {
 
     render () {
 
+        let bookBtn     = { ...styles.bookBtn };
+        let link_styles = { ...styles.links, ...styles.blue };
+
+        if (this.state.toggled) {
+            bookBtn.color = 'white';
+            bookBtn.backgroundColor = '#3d77ea';
+
+        }
+
         return (
             <nav className="navbar navbar-default" style={ styles.navbar }>
-                <div className="container-fluid">
+                <div className="container col-md-4">
                     <div className="navbar-header">
-
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"></span>
@@ -108,15 +137,19 @@ class HeaderContainer extends React.Component {
                             <span className="icon-bar"></span>
                         </button>
 
-                        <Link className="navbar-brand" to="/">
+                        <Link className="navbar-brand" to="/" style={ styles.noPad }>
                             <img alt="Golden State Maids" style={ styles.logo } src={ this.state.logo }/>
                         </Link>
                     </div>
 
-                    <div className="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+                    <div className="col-md-8 collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1" style={ styles.noPad }>
                         <ul className="nav navbar-nav">
-                            <li><Link to="/cleaning" style={ { ...styles.link, ...styles[this.props.theme] } }>Home Cleaning</Link></li>
-                            <li><Link to="/book" style={ { ...styles.link, ...styles[this.props.theme] } }>Book Now</Link></li>
+                            <li><Link className="btn" to="/cleaning" style={ link_styles }>Home Cleaning</Link></li>
+                            <li><Link className="btn" to="/about" style={ link_styles }>About Us</Link></li>
+                            <li><Link className="btn" to="/cleaning#checklist" style={ link_styles }>50pt Checklist</Link></li>
+                            <li>
+                                <Link to="/book" onMouseEnter={ this.toggleBookBtnStyle(1) } onMouseLeave={ this.toggleBookBtnStyle(0) } style={ bookBtn }>Book Now</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -126,7 +159,7 @@ class HeaderContainer extends React.Component {
 };
 
 HeaderContainer.defaultProps = {
-    theme: 'white'
+    theme: 'blue'
 }
 
 export default HeaderContainer;

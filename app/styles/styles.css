@@ -12,13 +12,6 @@ h1, h2 {
     background-color: #3d77ea
 }
 
-.navbar-brand,
-.navbar-nav li a {
-    line-height: 75px;
-    height: 75px;
-}
-
-
 .row.is-flex {
     display: flex;
     flex-wrap: wrap;

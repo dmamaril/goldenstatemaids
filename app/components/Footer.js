@@ -12,8 +12,7 @@ const styles = {
     },
 
     logo: {
-        height: '50px',
-        marginLeft: '-17px'
+        height: '50px'
     },
 
     links: {

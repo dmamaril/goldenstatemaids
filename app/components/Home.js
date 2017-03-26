@@ -102,7 +102,7 @@ class Home extends React.Component {
             <div>
                 <div className="jumbotron text-center" style={ styles.mainContainer }>
 
-                    <Header theme="blue"/>
+                    <Header/>
 
                     <h1 style={ styles.jumboText }> Go ahead & relax. </h1>
                     <h1> We'll clean.</h1>

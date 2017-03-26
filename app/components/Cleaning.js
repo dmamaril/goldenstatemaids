@@ -199,7 +199,7 @@ class Cleaning extends React.Component {
             <div>
 
                 <div className="container" style={ styles.bgImg }>
-                    <Header theme="blue"/>
+                    <Header/>
 
                     <div className="col-sm-offset-1 col-xs-12 col-md-5" style={ styles.content }>
                         <h1 style={ styles.h }> Let your home shine. </h1>
