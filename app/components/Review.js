@@ -31,7 +31,8 @@ const styles = {
     },
 
     header: {
-        margin: '0 auto 50px'
+        margin: '0 auto 50px',
+        fontWeight: '700'
     },
 
     flexContainer: {
@@ -66,7 +67,7 @@ class Review extends React.Component {
         return (
             <div className="container text-center" style={ styles.container }>
                 
-                <h1 className="white-header" style={ styles.header }>
+                <h1 style={ styles.header }>
                     <span className="icon-facebook"></span> HAPPY CUSTOMERS
                 </h1>
                 
