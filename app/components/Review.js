@@ -10,14 +10,20 @@ const styles = {
 
     container: {
         padding: '50px',
-        backgroundImage: `url(${ bg })`,
+        // backgroundImage: `url(${ bg })`,
+        backgroundColor: '#63ead3'
     },
 
     reviews: {
         padding: '10px',
         margin: '10px',
         borderRadius: '10px',
-        background: 'rgba(255, 255, 255, 0.8)',
+        background: 'rgba(255, 255, 255, 0.6)',
+    },
+
+    review: {
+        fontSize: '16px',
+        fontWeight: '400'
     },
 
     img: {
@@ -49,7 +55,7 @@ class Review extends React.Component {
                     <h4> <b>{ name }</b>, { city } </h4>
                 </div>
 
-                <p className="text-center">
+                <p style={ styles.review }>
                     { text }
                 </p>
             </div>
@@ -58,7 +64,7 @@ class Review extends React.Component {
 
     render () {
         return (
-            <div className="container text-center parallax" style={ styles.container }>
+            <div className="container text-center" style={ styles.container }>
                 
                 <h1 className="white-header" style={ styles.header }>
                     <span className="icon-facebook"></span> HAPPY CUSTOMERS

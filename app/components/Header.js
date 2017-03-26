@@ -145,7 +145,7 @@ class HeaderContainer extends React.Component {
                     <div className="col-md-8 collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1" style={ styles.noPad }>
                         <ul className="nav navbar-nav">
                             <li><Link className="btn" to="/cleaning" style={ link_styles }>Home Cleaning</Link></li>
-                            <li><Link className="btn" to="/about" style={ link_styles }>About Us</Link></li>
+                            <li><Link className="btn" to="/about-us" style={ link_styles }>About Us</Link></li>
                             <li><Link className="btn" to="/cleaning#checklist" style={ link_styles }>50pt Checklist</Link></li>
                             <li>
                                 <Link to="/book" onMouseEnter={ this.toggleBookBtnStyle(1) } onMouseLeave={ this.toggleBookBtnStyle(0) } style={ bookBtn }>Book Now</Link>
