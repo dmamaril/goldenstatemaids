@@ -53,7 +53,7 @@ class Review extends React.Component {
             <div className="col-md-3 col-sm-12" key={ index } style={ styles.reviews }>
                 <div>
                     <img className="img-circle" style={ styles.img } src={ img } />
-                    <h4> <b>{ name }</b>, { city } </h4>
+                    <h4> <b>{ name }</b>, <small>{ city }</small> </h4>
                 </div>
 
                 <p style={ styles.review }>

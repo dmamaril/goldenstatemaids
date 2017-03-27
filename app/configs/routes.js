@@ -7,8 +7,20 @@ import About            from '../components/About';
 import Cleaning         from '../components/Cleaning';
 import BookContainer    from '../containers/BookContainer';
 
+const handleUpdate = () => {
+    
+    let { hash } = window.location;
+
+    // if there are multiple hashes,
+    // let component scroll to appropriate anchor
+    // else scrollTop on route change
+    if (hash.indexOf('#') === hash.lastIndexOf('#')) {
+        window.scrollTo(0, 0);
+    }
+};
+
 export default (
-    <Router history={ hashHistory }>
+    <Router history={ hashHistory } onUpdate={ handleUpdate }>
         <Route path='/' component={ Main }>
             <IndexRoute component={ Home } />
             <Route path="book" component={ BookContainer } />
