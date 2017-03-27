@@ -65,11 +65,11 @@ export default (props) => (
                     <h4> Get to know us </h4>
 
                     <div>
-                        <Link to="/about-us">About Us</Link>
+                        <Link to="/about-us">About</Link>
                     </div>
 
                     <div>
-                        <Link to="/about-us#contact-us">Contact Us</Link>
+                        <Link to="/about-us#contact-us">Contact</Link>
                     </div>
 
                     <div>
