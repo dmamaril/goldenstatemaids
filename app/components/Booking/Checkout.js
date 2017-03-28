@@ -124,10 +124,10 @@ class Checkout extends React.Component {
                             { this.getServiceText() }
                         </p>
 
-                        <p>
+                        { /* <p>
                             <span className="icon-clock" style={ styles.icon }></span>
                             { this.getEstTimeText() }
-                        </p>
+                        </p> */ }
 
                         <p>
                             <span className="icon-loop" style={ styles.icon }></span>

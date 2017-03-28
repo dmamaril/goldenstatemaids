@@ -67,7 +67,7 @@ class Dropdown extends React.Component {
 
     handleMouseEnter () {
 
-        if (!this.state.isActive) {
+        if (!this.state.isActive && !window._isMobile) {
             this.setState({ isActive: true });
         }
 
@@ -75,7 +75,7 @@ class Dropdown extends React.Component {
 
     handleMouseLeave () {
 
-        if (this.state.isActive) {
+        if (this.state.isActive && !window._isMobile) {
             this.setState({ isActive: false });
         }
 
