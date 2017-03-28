@@ -60,8 +60,8 @@ class Extras extends React.Component {
             <div className="form-group booking-options">
 
                 <div className="form-headers" style={ styles.header }>
-                    <h2> How often? </h2>
-                    <h6> It’s all about matching you with the perfect cleaner for your home. Scheduling is flexible. Cancel or reschedule anytime. </h6>
+                    <h2> Select Extras </h2>
+                    <h6> Adds extra time. </h6>
                 </div>
 
                 { this.props.extras.map(this.createExtras) }
