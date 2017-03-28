@@ -61,9 +61,7 @@ class DateTimePicker extends React.Component {
             return (<option value=""> --:-- </option>);
         }
 
-        if (display_text === 'Fully Booked') {
-            this.state.is_full = true;
-        }
+        this.state.is_full = display_text === 'Fully Booked';
 
         return (<option value={ start_time } key={ index }> { display_text } </option>);
     }
