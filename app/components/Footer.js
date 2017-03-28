@@ -81,11 +81,11 @@ export default (props) => (
                     <h4> How can we serve you? </h4>
 
                     <div>
-                        <Link to="/cleaning">Home Cleaning</Link>
+                        <Link to="/home-cleaning">Home Cleaning</Link>
                     </div>
 
                     <div>
-                        <Link to="/cleaning#checklist">50pt Checklist</Link>
+                        <Link to="/home-cleaning#checklist">50pt Checklist</Link>
                     </div>
                 </div>
 

@@ -4,7 +4,10 @@ import { Link }         from 'react-router';
 import Book             from '../components/Booking/Book';
 import { setBooking }   from '../utils/firebaseHelpers';
 import calcPriceTotal   from '../utils/calcPriceTotal'
-import { chargeUser }   from '../utils/stripeHelpers'
+import { submit }       from '../utils/stripeHelpers'
+
+import key      from '../configs/stripe';
+import image    from '../assets/logo/logo-stripe.png';
 
 
 class BookContainer extends React.Component {
@@ -39,7 +42,7 @@ class BookContainer extends React.Component {
      * @param  {[type]} e [description]
      * @return {[type]}   [description]
      */
-    async handleSubmit (e) {
+     handleSubmit (e) {
 
         e.preventDefault();
 
@@ -63,12 +66,47 @@ class BookContainer extends React.Component {
             booking.start_time  = start_time;
             booking.end_time    = end_time;
 
+            // detach service_time;
             delete booking.service_time;
 
-            let result = await setBooking(booking);
-            let charge = await chargeUser(booking.email, description, total);
+            const handler = StripeCheckout.configure(
+                {
+                    key,
+                    image,
+                    zipCode: true,
+                    locale: 'auto',
+                    token: async ({ id }) => {
 
-            this.context.router.push('/cleaning');
+                        let source      = id;
+                        let amount      = total;
+                        let description = 'yo man';
+
+
+                        try {
+
+                            let result  = await setBooking(booking);
+                            let charge  = await submit({ amount, source, description });  
+
+                            console.log(charge);
+                            this.context.router.push('/home-cleaning');
+
+
+                        } catch (e) {
+
+                            console.log(e);
+                        }
+
+                    }
+                }
+            );
+
+
+            handler.open({
+                email: booking.email,
+                amount: total * 100,
+                description: 'HEYO',
+                name: 'Golden State Maids'
+            });
 
         } catch (err) {
 

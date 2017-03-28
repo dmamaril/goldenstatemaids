@@ -4,7 +4,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import Main             from '../components/Main';
 import Home             from '../components/Home';
 import About            from '../components/About';
-import Cleaning         from '../components/Cleaning';
+import HomeCleaning     from '../components/HomeCleaning';
 import BookContainer    from '../containers/BookContainer';
 
 const handleUpdate = () => {
@@ -24,7 +24,7 @@ export default (
         <Route path='/' component={ Main }>
             <IndexRoute component={ Home } />
             <Route path="book" component={ BookContainer } />
-            <Route path="cleaning" component={ Cleaning } />
+            <Route path="home-cleaning" component={ HomeCleaning } />
             <Route path="about-us" component={ About } />
         </Route>
     </Router>

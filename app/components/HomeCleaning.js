@@ -3,7 +3,7 @@ import { Link }     from 'react-router';
 import ReactDOM     from 'react-dom'
 
 import Header       from './Header';
-import bg_img       from '../assets/cleaning.jpg';
+import bg_img       from '../assets/home-cleaning.jpg';
 import checklist    from '../configs/checklist';
 import fridge       from '../assets/fridge.svg';
 import oven         from '../assets/oven.svg';
@@ -122,7 +122,7 @@ const styles = {
     }
 };
 
-class Cleaning extends React.Component {
+class HomeCleaning extends React.Component {
 
     constructor (props) {
 
@@ -316,8 +316,8 @@ class Cleaning extends React.Component {
     }
 };
 
-Cleaning.defaultProps = {
+HomeCleaning.defaultProps = {
     checklist
 };
 
-export default Cleaning;
+export default HomeCleaning;

@@ -13,7 +13,7 @@ const DATEPICKER_CFGS = {
     autoclose       : true,
     minDate         : 1,
     endDate         : '+3m',
-    // startDate       : '0d'
+    startDate       : '0d'
 };
 
 class DateTimePicker extends React.Component {
@@ -73,7 +73,7 @@ class DateTimePicker extends React.Component {
         let { value } = e.target;
 
         // reset time selections;
-        if (value.length === 0 || new Date(value).toString() === 'Invalid Date') {
+        if (value.length === 0) {
 
             // update only if we aren't already empty;
             if (!this.state.timeslots.length) {
