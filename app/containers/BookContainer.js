@@ -69,6 +69,8 @@ class BookContainer extends React.Component {
             // detach service_time;
             delete booking.service_time;
 
+            let amount = total * 100;
+
             const handler = StripeCheckout.configure(
                 {
                     key,
@@ -78,9 +80,7 @@ class BookContainer extends React.Component {
                     token: async ({ id }) => {
 
                         let source      = id;
-                        let amount      = total;
                         let description = 'yo man';
-
 
                         try {
 
@@ -100,13 +100,15 @@ class BookContainer extends React.Component {
                 }
             );
 
+            const checkout = () => {
+                handler.open({
+                    email: booking.email,
+                    description: 'HEYO',
+                    name: 'Golden State Maids'
+                });
+            };
 
-            handler.open({
-                email: booking.email,
-                amount: total * 100,
-                description: 'HEYO',
-                name: 'Golden State Maids'
-            });
+            window.isMobile ? (checkout)() : checkout();
 
         } catch (err) {
 
