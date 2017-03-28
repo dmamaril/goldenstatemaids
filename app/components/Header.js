@@ -111,7 +111,7 @@ class HeaderContainer extends React.Component {
         window.addEventListener('resize', this.updateLogo.bind(this));
     }
 
-    componentDidUnMount() {
+    componentWillUnmount() {
         window.removeEventListener('resize', this.updateLogo.bind(this));
     }
 
