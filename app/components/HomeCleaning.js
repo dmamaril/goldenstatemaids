@@ -229,9 +229,9 @@ class HomeCleaning extends React.Component {
                     <h2 className={ (this.state.level === 2 ? 'color-white' : '') + " text-center" } style={ styles.noMargin }> Our 50pt checklist </h2>
 
                     <div className="container col-sm-offset-1 col-md-10">
-                        <h1 className="col-xs-12 col-sm-3" onClick={ this.updateLevel(0) } style={ Object.assign({}, styles.options, lvl !== 0 && styles.fade) }> Standard </h1>
-                        <h1 className="col-xs-12 col-sm-3" onClick={ this.updateLevel(1) } style={ Object.assign({}, styles.options, lvl !== 1 && styles.fade) }> Standard Plus </h1>
-                        <h1 className="col-xs-12 col-sm-3" onClick={ this.updateLevel(2) } style={ Object.assign({}, styles.options, lvl === 2 && styles.light, lvl !== 2 && styles.fade) }> Deep </h1>
+                        <h1 className="col-sm-12 col-md-3" onClick={ this.updateLevel(0) } style={ Object.assign({}, styles.options, lvl !== 0 && styles.fade) }> Standard </h1>
+                        <h1 className="col-sm-12 col-md-3" onClick={ this.updateLevel(1) } style={ Object.assign({}, styles.options, lvl !== 1 && styles.fade) }> Standard Plus </h1>
+                        <h1 className="col-sm-12 col-md-3" onClick={ this.updateLevel(2) } style={ Object.assign({}, styles.options, lvl === 2 && styles.light, lvl !== 2 && styles.fade) }> Deep </h1>
                     </div>
 
                     <Link to="book" className={ (this.state.level === 2 ? 'color-white' : '') + " btn btn-lg" } style={ styles.book_sm }>
