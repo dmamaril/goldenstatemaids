@@ -6,8 +6,8 @@ import { setBooking }   from '../utils/firebaseHelpers';
 import calcPriceTotal   from '../utils/calcPriceTotal'
 import { submit }       from '../utils/stripeHelpers'
 
-import key      from '../configs/stripe';
-import image    from '../assets/logo/logo-stripe.png';
+import key              from '../configs/stripe';
+import image            from '../assets/logo/logo-stripe.png';
 
 
 class BookContainer extends React.Component {
@@ -56,6 +56,8 @@ class BookContainer extends React.Component {
                 description,
             } = this.state;
 
+            let { email }   = booking;
+
             let est_time    = this.state.mins;
             let add_mins    = (est_time % 60);
             let add_hrs     = Math.floor(est_time / 60) * 100;
@@ -84,11 +86,10 @@ class BookContainer extends React.Component {
 
                         try {
 
-                            let result  = await setBooking(booking);
-                            let charge  = await submit({ amount, source, description });  
+                            // let result  = await setBooking(booking);
+                            let charge  = await submit({ source, email, amount, description, booking });  
 
-                            console.log(charge);
-                            this.context.router.push('/home-cleaning');
+                            this.context.router.push('/thank-you');
 
 
                         } catch (e) {
@@ -102,8 +103,8 @@ class BookContainer extends React.Component {
 
             const checkout = () => {
                 handler.open({
-                    email: booking.email,
-                    description: 'HEYO',
+                    email,
+                    description,
                     name: 'Golden State Maids'
                 });
             };

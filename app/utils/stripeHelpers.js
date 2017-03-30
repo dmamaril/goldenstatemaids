@@ -10,7 +10,7 @@ export async function submit (payload) {
             method      : 'POST',
             contentType : 'application/json',
             data        : JSON.stringify(payload),
-            url         : 'https://goldenstatemaids.herokuapp.com/charge',
+            url         : 'https://goldenstatemaids.herokuapp.com/createCustomer',
         };
 
         $.ajax(options).then(resolve).catch(reject);

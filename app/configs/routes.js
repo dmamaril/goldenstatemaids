@@ -4,6 +4,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import Main             from '../components/Main';
 import Home             from '../components/Home';
 import About            from '../components/About';
+import Thanks            from '../components/Thanks';
 import HomeCleaning     from '../components/HomeCleaning';
 import BookContainer    from '../containers/BookContainer';
 
@@ -26,6 +27,7 @@ export default (
             <Route path="book" component={ BookContainer } />
             <Route path="home-cleaning" component={ HomeCleaning } />
             <Route path="about-us" component={ About } />
+            <Route path="thank-you" component={ Thanks } />
         </Route>
     </Router>
 );
