@@ -70,7 +70,6 @@ const styles = {
     },
 
     checklist: {
-        marginRight: '15px',
         maxWidth: '225px',
     },
 
@@ -183,7 +182,7 @@ class HomeCleaning extends React.Component {
         let list = this.createItemList(items);
 
         return (
-            <div key={ index } style={ styles.checklist } className="co-sm-6 col-md-4">
+            <div key={ index } style={ styles.checklist } className="col-sm-6 col-md-4">
                 <h3 className={ this.state.level === 2 ? 'color-white' : '' }> { header } </h3>
                 { list }
             </div>

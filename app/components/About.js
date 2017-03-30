@@ -34,13 +34,14 @@ const styles = {
     },
 
     icon: {
-        fontSize: '25px'
+        fontSize: '25px',
+        marginRight: '15px',
     },
 
     links: {
         color: 'black',
-        marginLeft: '15px',
-        fontSize: '25px'
+        fontSize: '25px',
+        wordWrap: 'break-word'
     },
 
     p: {
