@@ -3,19 +3,12 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist"
-  },
-  "firebase": "golden-state-maids-a4ec3",
-  "public": "dist",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ],
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/app/index.html"
-    }
-  ]
+    "public": "dist",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/app/index.html"
+        }
+      ]
+  }
 }
