@@ -87,9 +87,12 @@ class BookContainer extends React.Component {
                         try {
 
                             // let result  = await setBooking(booking);
-                            let charge  = await submit({ source, email, amount, description, booking });  
 
-                            this.context.router.push('/thank-you');
+                            // key is firebase key for customer;
+                            let { key } = await submit({ source, email, amount, description, booking });  
+                            let route   = ['thank-you', booking.first_name, email, booking.address, key].join('/');
+                            
+                            this.context.router.push(route);
 
 
                         } catch (e) {

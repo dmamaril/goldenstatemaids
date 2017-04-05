@@ -1,10 +1,11 @@
 import React from 'react'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
+import Faq              from '../components/Faq';
 import Main             from '../components/Main';
 import Home             from '../components/Home';
 import About            from '../components/About';
-import Thanks            from '../components/Thanks';
+import Thanks           from '../components/Thanks';
 import HomeCleaning     from '../components/HomeCleaning';
 import BookContainer    from '../containers/BookContainer';
 
@@ -27,7 +28,8 @@ export default (
             <Route path="book" component={ BookContainer } />
             <Route path="home-cleaning" component={ HomeCleaning } />
             <Route path="about-us" component={ About } />
-            <Route path="thank-you" component={ Thanks } />
+            <Route path="faq" component={ Faq } />
+            <Route path="thank-you/:name/:email/:confirmation" component={ Thanks } />
         </Route>
     </Router>
 );

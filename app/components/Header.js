@@ -146,7 +146,7 @@ class HeaderContainer extends React.Component {
                         <ul className="nav navbar-nav">
                             <li><Link className="btn" to="/home-cleaning" style={ link_styles }>Home Cleaning</Link></li>
                             <li><Link className="btn" to="/about-us" style={ link_styles }>About Us</Link></li>
-                            <li><Link className="btn" to="/home-cleaning#checklist" style={ link_styles }>50pt Checklist</Link></li>
+                            <li><Link className="btn" to="/faq" style={ link_styles }> FAQ </Link></li>
                             <li>
                                 <Link to="/book" onMouseEnter={ this.toggleBookBtnStyle(1) } onMouseLeave={ this.toggleBookBtnStyle(0) } style={ bookBtn }>Book Now</Link>
                             </li>
