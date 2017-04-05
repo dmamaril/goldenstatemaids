@@ -19,6 +19,10 @@ module.exports = {
         filename: "index_bundle.js"
     },
 
+    devServer: {
+      historyApiFallback: true
+    },
+
     module: {
         loaders: [
             {

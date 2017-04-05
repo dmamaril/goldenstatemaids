@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import Faq              from '../components/Faq';
 import Main             from '../components/Main';
@@ -22,7 +22,7 @@ const handleUpdate = () => {
 };
 
 export default (
-    <Router history={ hashHistory } onUpdate={ handleUpdate }>
+    <Router history={ browserHistory } onUpdate={ handleUpdate }>
         <Route path='/' component={ Main }>
             <IndexRoute component={ Home } />
             <Route path="book" component={ BookContainer } />
