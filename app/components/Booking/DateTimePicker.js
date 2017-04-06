@@ -5,6 +5,13 @@ import { getTeams,  getAvailability }   from '../../utils/firebaseHelpers.js';
 const styles = {
     fontHeavy: {
         fontWeight: '700'
+    },
+
+    input: {
+        height: '60px',
+        borderRadius: 0,
+        fontSize: '18px',
+        border: '1px solid rgba(0, 0, 0, 0.1)'
     }
 };
 
@@ -113,12 +120,12 @@ class DateTimePicker extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-sm-12 date" id="datepicker">
-                    <input required ref="calendar" type="text" name="service_date" className="form-control" placeholder="MM-DD-YYYY"/>
+                    <input style={ styles.input } required ref="calendar" type="text" name="service_date" className="form-control" placeholder="MM-DD-YYYY"/>
                 </div>
 
 
                 <div className="col-md-6 col-sm-12">
-                    <select name="service_time" onChange={ this.props.onChange } required className="form-control">
+                    <select style={ styles.input } name="service_time" onChange={ this.props.onChange } required className="form-control">
                         { (!this.state.timeslots.length ? this.createTimeSlot() : this.state.timeslots.map(this.createTimeSlot)) }
                     </select>
                 </div>
