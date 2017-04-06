@@ -90,6 +90,12 @@ class BookingForm extends React.Component {
                 <HomeInfo onChange={ this.props.onChange } bed={ this.props.bed } bath={ this.props.bath }/>
 
 
+                <Frequency onChange={ this.props.onChange } freq={ this.props.freq }/>
+
+                <DateTimePicker onChange={ this.props.onChange } />
+
+
+
                 <div className="form-group">
 
                     <div className="form-headers">
@@ -144,9 +150,6 @@ class BookingForm extends React.Component {
 
                 <Extras onChange={ this.props.onChange } />
 
-                <DateTimePicker onChange={ this.props.onChange } />
-
-                <Frequency onChange={ this.props.onChange } freq={ this.props.freq }/>
 
                 <Checkout 
                     bed={ this.props.bed }

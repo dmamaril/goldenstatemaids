@@ -6,7 +6,7 @@ const styles = {
         lineHeight: '60px',
         height: '60px',
         textAlign: 'center',
-        border: '1px solid rgba(0, 0, 0, 0.3)'
+        border: '1px solid rgba(0, 0, 0, 0.1)'
     },
 
     optionContainer: {

@@ -112,6 +112,8 @@ class BookContainer extends React.Component {
                 });
             };
 
+            // mobile will prevent you from opening pop ups like stripe;
+            // checkout has to be called outside of a callback if mobile;
             window.isMobile ? (checkout)() : checkout();
 
         } catch (err) {
