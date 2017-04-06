@@ -9,6 +9,25 @@ const styles = {
         textAlign: 'center',
         fontWeight: '300',
         opacity: '0.5'
+    },
+
+    label: {
+        border: '1px solid',
+        borderColor:  'rgba(0, 0, 0, 0.1)',
+
+        height: '60px',
+        lineHeight: '60px',
+
+        width: '100%',
+
+        textAlign: 'center',
+        fontWeight: '300',
+    },
+
+    checked: {
+        color: 'white',
+        borderColor: '#3d77ea',
+        backgroundColor: '#3d77ea'
     }
 };
 
@@ -36,9 +55,15 @@ class Frequency extends React.Component {
 
         let { label, discount, value } = freq;
 
+        let labelStyle = { ...styles.label };
+
+        if (this.state.frequency === value) {
+            labelStyle = { ...labelStyle, ...styles.checked }
+        }
+
         return (
             <div className="col-md-3 col-sm-12" key={ i }>
-                <label className={ (this.state.frequency === value ? 'checked' : '') }>
+                <label style= { labelStyle }>
                     <input onChange={ this.handleChange } name="frequency" type="radio" className="form-control" value={ value }/>
                     { label }
                 </label>
