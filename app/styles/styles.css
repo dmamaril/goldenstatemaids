@@ -130,12 +130,6 @@ h1, h2 {
     top: -65px;
     background-color: #3d77ea;
 }
-/*
-.booking-option label:not(.checked) img:hover {
-    position: relative;
-    top: -65px;
-    background-color: #fdb927;
-}*/
 
 .gsm-dropdown {
     position: relative;

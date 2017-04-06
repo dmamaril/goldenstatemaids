@@ -195,7 +195,7 @@ class Faq extends React.Component {
                                 <div style={ styles.answer }>
                                     <p>
                                         We provide a customized post-construction clean for these types of situations. Please contact us at 
-                                        <a href="tel:(408) 831-1531" type="phone"> (408) 831-1531</a>
+                                        <a href="tel:(408) 831-1531" type="phone"> (408) 831-1531 </a>
                                         or email
                                         <a href="email:hello@goldenstatemaids.com" type="email"> hello@goldenstatemaids.com </a>
                                         to coordinate and receive this pricing information.
@@ -210,8 +210,8 @@ class Faq extends React.Component {
                                 <div style={ styles.answer }>
                                     <p>
                                         Yes, special instructions can be left for the cleaning professional when you schedule your appointment online
-                                         After the clean is complete, you can rate your MyClean experience and provide feedback submitting to
-                                        <a href="email:hello@goldenstatemaids.com" type="email"> hello@goldenstatemaids.com </a>
+                                         After the clean is complete, you can rate your GSM experience and provide feedback submitting to
+                                        <a href="email:hello@goldenstatemaids.com" type="email"> hello@goldenstatemaids.com</a>.
                                     </p>
                                 </div>
                             </li>
@@ -249,7 +249,7 @@ class Faq extends React.Component {
                                         Customers can request a reclean either by email (
                                         <a href="email:hello@goldenstatemaids.com" type="email">hello@goldenstatemaids.com</a>
                                         ) or by phone
-                                        <a href="tel:(408) 831-1531" type="phone"> (408) 831-1531</a>
+                                        <a href="tel:(408) 831-1531" type="phone"> (408) 831-1531 </a>
                                         as long as the appointment was completed within the past
                                         <b> 48 hours</b>
                                         . The reclean appointment must be scheduled and completed within 72 hours of contact.
