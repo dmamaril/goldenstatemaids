@@ -13,12 +13,8 @@ const styles = {
         borderRight: 'none'
     },
 
-    address: {
-        paddingRight: '0'
-    },
-
-    apt: {
-        paddingLeft: '0'
+    container: {
+        padding: '0'
     }
 };
 
@@ -96,12 +92,12 @@ class Address extends React.Component {
                     <h6> Where would you like us to clean? </h6>
                 </div>
 
-                <div className="col-xs-10" style={ styles.address }>
+                <div className="col-xs-10" style={ styles.container }>
                     <h5> ADDRESS </h5>
                     <input style={ { ...styles.input, ...styles.inputAddress } } required name="address1" type="text" className="form-control" ref="locationTextField"/>
                 </div>
                 
-                <div className="col-xs-2" style={ styles.apt }>
+                <div className="col-xs-2" style={ styles.container }>
                     <h5> APT # </h5>
                     <input style={ styles.input } onChange={ this.props.onChange } name="address2" type="text" className="form-control"/>
                 </div>

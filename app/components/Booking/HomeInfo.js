@@ -29,8 +29,6 @@ class HomeInfo extends React.Component {
 
         let { value, name } = target.dataset; 
         
-        value = Number(value);
-
         // mock event;
         target = { name, value };
         
@@ -47,7 +45,7 @@ class HomeInfo extends React.Component {
                 style.borderLeft = 'none';
             }
 
-            if (this.state[name] === n) {
+            if (Number(this.state[name]) === n) {
                 style.backgroundColor = '#3d77ea';
                 style.color = 'white';
             }
