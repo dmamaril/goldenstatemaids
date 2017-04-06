@@ -26,19 +26,23 @@ class Customer extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-sm-12">
-                    <input style={ styles.input } onChange={ this.props.onChange } required name="first_name" type="text" className="form-control" placeholder="First Name"/>
+                    <h5> FIRST NAME </h5>
+                    <input style={ styles.input } onChange={ this.props.onChange } required name="first_name" type="text" className="form-control"/>
                 </div>
                 
                 <div className="col-md-6 col-sm-12">
-                    <input style={ styles.input } onChange={ this.props.onChange } required name="last_name" type="text" className="form-control" placeholder="Last Name"/>
+                    <h5> LAST NAME </h5>
+                    <input style={ styles.input } onChange={ this.props.onChange } required name="last_name" type="text" className="form-control"/>
                 </div>
                 
                 <div className="col-md-6 col-sm-12">
-                    <input style={ styles.input } onChange={ this.props.onChange } required name="email" type="email" className="form-control" placeholder="E-Mail"/>
+                    <h5> EMAIL </h5>
+                    <input style={ styles.input } onChange={ this.props.onChange } required name="email" type="email" className="form-control"/>
                 </div>
                 
                 <div className="col-md-6 col-sm-12">
-                    <input style={ styles.input } onChange={ this.props.onChange } required name="phone" type="phonenumber" className="form-control" placeholder="Phone Number"/>
+                    <h5> PHONE </h5>
+                    <input style={ styles.input } onChange={ this.props.onChange } required name="phone" type="phonenumber" className="form-control"/>
                 </div>
             </div>
         );

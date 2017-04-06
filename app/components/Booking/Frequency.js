@@ -62,15 +62,18 @@ class Frequency extends React.Component {
         }
 
         return (
-            <div className="col-md-3 col-sm-12" key={ i }>
+            <div className="col-md-3 col-sm-3" key={ i }>
                 <label style= { labelStyle }>
                     <input onChange={ this.handleChange } name="frequency" type="radio" className="form-control" value={ value }/>
                     { label }
                 </label>
 
+                { /*
+                    needs mobile optimization
                 <p style={ styles.discount }>
                     <i>{ discount }</i>
                 </p>
+                */ }
             </div>
         );
     }

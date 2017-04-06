@@ -120,11 +120,13 @@ class DateTimePicker extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-sm-12 date" id="datepicker">
+                    <h5> DATE </h5> 
                     <input style={ styles.input } required ref="calendar" type="text" name="service_date" className="form-control" placeholder="MM-DD-YYYY"/>
                 </div>
 
 
                 <div className="col-md-6 col-sm-12">
+                    <h5> TIME </h5>
                     <select style={ styles.input } name="service_time" onChange={ this.props.onChange } required className="form-control">
                         { (!this.state.timeslots.length ? this.createTimeSlot() : this.state.timeslots.map(this.createTimeSlot)) }
                     </select>

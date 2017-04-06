@@ -96,12 +96,14 @@ class Address extends React.Component {
                     <h6> Where would you like us to clean? </h6>
                 </div>
 
-                <div className="col-md-10 col-sm-12" style={ styles.address }>
-                    <input style={ { ...styles.input, ...styles.inputAddress } } required name="address1" type="text" className="form-control" placeholder="Street Address" ref="locationTextField"/>
+                <div className="col-xs-10" style={ styles.address }>
+                    <h5> ADDRESS </h5>
+                    <input style={ { ...styles.input, ...styles.inputAddress } } required name="address1" type="text" className="form-control" ref="locationTextField"/>
                 </div>
                 
-                <div className="col-md-2 col-sm-12" style={ styles.apt }>
-                    <input style={ styles.input } onChange={ this.props.onChange } name="address2" type="text" className="form-control" placeholder="Apt # (optional)"/>
+                <div className="col-xs-2" style={ styles.apt }>
+                    <h5> APT # </h5>
+                    <input style={ styles.input } onChange={ this.props.onChange } name="address2" type="text" className="form-control"/>
                 </div>
             </div>
         );
