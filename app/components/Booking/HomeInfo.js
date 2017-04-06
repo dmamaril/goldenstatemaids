@@ -1,20 +1,63 @@
 import React from 'react';
 
+
+const styles = {
+    option: {
+        lineHeight: '60px',
+        height: '60px',
+        textAlign: 'center',
+        border: '1px solid rgba(0, 0, 0, 0.3)'
+    },
+
+    optionContainer: {
+        margin: '25px auto'
+    }
+}
+
 class HomeInfo extends React.Component {
 
     constructor(props) {
 
         super(props);
-        this.state          = { bed: props.bed || 1, bath: props.bath || 1 };
-        this.handleSelect   = this.handleSelect.bind(this);
+
+        this.handleSelect       = this.handleSelect.bind(this);
+        this.createBoxOption    = this.createBoxOption.bind(this);
+        this.state              = { bed: props.bed || 1, bath: props.bath || 1 };
     }
 
-    handleSelect (e) {
+    handleSelect ({ target }) {
 
-        let { name, value } = e.target;
+        let { value, name } = target.dataset; 
+        
+        value = Number(value);
 
-        this.props.onChange(e);
+        // mock event;
+        target = { name, value };
+        
+        this.props.onChange({ target });
         this.setState({ [name] : value });
+    }
+
+    createBoxOption (name) {
+        return (n, i) => {
+
+            let style = { ...styles.option };
+
+            if (i !== 0) {
+                style.borderLeft = 'none';
+            }
+
+            if (this.state[name] === n) {
+                style.backgroundColor = '#3d77ea';
+                style.color = 'white';
+            }
+
+            return (
+                <div className="col-xs-2" style={ style } onClick={ this.handleSelect } key={ i } data-name={ name } data-value={ n }>
+                    { n }
+                </div>
+            );
+        };
     }
 
     render () {
@@ -23,40 +66,35 @@ class HomeInfo extends React.Component {
 
                 <div className="form-headers">
                     <h2> Choose Your Service </h2>
-                    <h6> Tell us about your home. </h6>
                 </div>
 
-                <div className="col-md-6 col-sm-12">
-                    <select onChange={ this.handleSelect } value={ this.state.bed } required name="bed" className="form-control">
-                        <option value="1"> 1 Bedroom </option>
-                        <option value="2"> 2 Bedroom </option>
-                        <option value="3"> 3 Bedroom </option>
-                        <option value="4"> 4 Bedroom </option>
-                        <option value="5"> 5 Bedroom </option>
-                        <option value="6"> 6 Bedroom </option>
-                    </select>
+                <div className="container" style={ styles.optionContainer } >
+
+                    <h5> NUMBER OF BEDROOMS </h5>
+
+                    <div style={ styles.optionGroup }>
+                        { this.props.options.map(this.createBoxOption('bed')) }
+                    </div>
+
                 </div>
-                
-                <div className="col-md-6 col-sm-12">
-                    <select onChange={ this.handleSelect } value={ this.state.bath } required name="bath" className="form-control">
-                        <option value="1"> 1 Bathroom </option>
-                        <option value="1.5"> 1.5 Bathroom </option>
-                        <option value="2"> 2 Bathroom </option>
-                        <option value="2.5"> 2.5 Bathroom </option>
-                        <option value="3"> 3 Bathroom </option>
-                        <option value="3.5"> 3.5 Bathroom </option>
-                        <option value="4"> 4 Bathroom </option>
-                        <option value="4.5"> 4.5 Bathroom </option>
-                        <option value="5"> 5 Bathroom </option>
-                        <option value="5.5"> 5.5 Bathroom </option>
-                        <option value="6"> 6 Bathroom </option>
-                        <option value="6.5"> 6.5 Bathroom </option>
-                    </select>
+
+                <div className="container" style={ styles.optionContainer } >
+
+                    <h5> NUMBER OF BATHROOMS </h5>
+
+                    <div style={ styles.optionGroup }>
+                        { this.props.options.map(this.createBoxOption('bath')) }
+                    </div>
+
                 </div>
             </div>
         );
     }
 
+};
+
+HomeInfo.defaultProps = {
+    options: [1,2,3,4,5,6]
 };
 
 export default HomeInfo;

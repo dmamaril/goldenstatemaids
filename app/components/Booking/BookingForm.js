@@ -86,6 +86,10 @@ class BookingForm extends React.Component {
                     <p> Great! Few details and we can complete your booking. </p>
                 </div>
 
+
+                <HomeInfo onChange={ this.props.onChange } bed={ this.props.bed } bath={ this.props.bath }/>
+
+
                 <div className="form-group">
 
                     <div className="form-headers">
@@ -137,8 +141,6 @@ class BookingForm extends React.Component {
                         <input onChange={ this.props.onChange } required name="zip" type="text" className="form-control" placeholder="Zip Code"/>
                     </div> */ }
                 </div>
-
-                <HomeInfo onChange={ this.props.onChange } bed={ this.props.bed } bath={ this.props.bath }/>
 
                 <Extras onChange={ this.props.onChange } />
 
