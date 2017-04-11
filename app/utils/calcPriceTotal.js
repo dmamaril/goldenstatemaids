@@ -29,15 +29,8 @@ export default ({ bed=1, bath=1, frequency=0, options={} }) => {
         // options { [option]: bool }
         if (options[option]) {
 
-            // an option was selected;
             subtotal += pricing.options[option].price;
             mins += pricing.options[option].mins;
-            
-        } else {
-
-            // an option was deselected
-            subtotal -= pricing.options[option].price;
-            mins -= pricing.options[option].mins;
         }
     }
 
